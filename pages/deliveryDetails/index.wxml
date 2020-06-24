@@ -3,27 +3,55 @@
 	<header />
 	<view class="groupT">
 		<p>奖品设置</p>
+		<ul>
+			<view class="titles">
+				<text>奖品</text>
+				<text>已抽中/库存</text>
+			</view>
+			<li wx:for='{{prizeData}}' wx:for-item='item' wx:key='index' wx:for-index='index'>
+				<span class='userImg'>
+					<image src="img/3.png" />
+					<text>{{item.name}}</text>
+				</span>
+				<span class='userNum'>
+					<text>{{item.readyNum}}</text>
+					<text>/{{item.unNun}}</text>
+				</span>
+				<span class='numAdd'>
+					<image src="img/4.png"></image>
+					<text>补库存</text>
+				</span>
+			</li>
+		</ul>
+	</view>
+	<view class="przSet">
+		<p>
+    奖品设置
+    <view bindtap="openTimeFun" class="timeData">{{openTime}}<image src="img/5.png"/></view>
+    </p>
     <ul>
-      <view class="titles">
-        <text>奖品</text>
-        <text>已抽中/库存</text>
+      <view class="btnNum">
+        <span>
+          <text>参与人次</text>
+          <text>89</text>
+        </span>
+        <span>
+          <text>参与人数</text>
+          <text>89</text>
+        </span>
       </view>
-      <li>
-        <span class='userImg'>
-          <image></image>
-          <text>波音747播放的747</text>
-        </span>
-        <span class='userNum'>
-          <text>8</text>
-          <text>/89</text>
-        </span>
-        <span class='numAdd'>
-          <text>补库存</text>
-        </span>
-      </li>
+      <view class="przType">
+        <text>成员</text>
+        <text>奖品</text>
+        <text>兑换时间</text>
+      </view>
+      <li></li>
     </ul>
 	</view>
-  <view class="backBtn">
-    <button class="bottons">返回群中心</button>
-  </view>
+	<view class="backBtn">
+		<button class="bottons">返回群中心</button>
+	</view>
+	<van-popup show="{{ openOver }}" position="bottom" bindtap="onClose">
+		<van-datetime-picker type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}" bind:confirm="onInput" />
+	</van-popup>
 </view>
