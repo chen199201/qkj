@@ -1,0 +1,23 @@
+{
+  "name": "qkj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chen199201/qkj.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chen199201/qkj/issues"
+  },
+  "homepage": "https://github.com/chen199201/qkj#readme",
+  "dependencies": {
+    "vant-weapp": "^0.5.28"
+  },
+
+}

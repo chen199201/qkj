@@ -1,0 +1,7 @@
+<!--pages/groupSign/index.wxml-->
+<view class="sgin">
+  <header/>
+  <view class="head">
+
+  </view>
+</view>

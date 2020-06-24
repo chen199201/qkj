@@ -1,0 +1,132 @@
+<!--pages/launchLottery/index.wxml-->
+<!-- 发起抽奖页面 -->
+<view class="lanuch">
+	<header style='width:100%' />
+	<block>
+		<view class="timeset">
+			<text class="timetit">时间设置</text>
+			<ul>
+				<li>
+					<span>抽奖类型</span>
+					<span class='timeType'>
+						<i>单次</i>
+						<i>循环</i>
+					</span>
+				</li>
+				<li>
+					<span>开始时间</span>
+					<span>
+						<view class="tui-picker-content setR">
+							<view bindtap="openTimeFun" class="timeData">{{openTime}}</view>
+							<van-popup show="{{ openOver }}" position="bottom" bindtap="onClose">
+								<van-datetime-picker type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}" bind:confirm="onInput" />
+							</van-popup>
+						</view>
+					</span>
+				</li>
+				<li>
+					<span>结束时间</span>
+					<span>
+						<view class="tui-picker-content setR">
+							<view bindtap="openTimeFun" class="timeData">{{openTime}}</view>
+							<van-popup show="{{ openOver }}" position="bottom" bindtap="onClose">
+								<van-datetime-picker type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}" bind:confirm="onInput" />
+							</van-popup>
+						</view>
+					</span>
+				</li>
+			</ul>
+			<text class="timetit">奖品设置</text>
+		</view>
+	</block>
+	<view class="prizeType">
+		<ul class="lanuchBan" wx:for='{{defalutArr}}' wx:key='idx' wx:for-index="idx" wx:for-item='item'>
+			<li>
+				<span>
+					<image src="img/3.png" wx:if='{{idx>0}}' class='delImg' data-delindex="{{idx}}" bindtap='delArr'>{{idx}}</image>{{idx+1}}
+					等奖类型
+				</span>
+				<dl class='preType'>
+					<dd class="changeType {{ops.val==item.type?'inColor':''}}" wx:for='{{optionArr}}' data-opindex='{{opindex}}' data-idx='{{idx}}' wx:for-index="opindex" wx:for-item='ops' wx:key='opindex' bindtap='getType'>{{ops.a}}</dd>
+				</dl>
+			</li>
+			<li>
+				<span>奖品名称</span>
+				<dl>
+					<dd><input type="text" value="{{item.name}}" bindinput="getVal" data-nameval='0' data-idx='{{idx}}' placeholder="请输入" /></dd>
+				</dl>
+			</li>
+			<li>
+				<span>奖品库存</span>
+				<dl>
+					<dd><input type="number" value='{{item.num}}' bindinput="getVal" data-nameval='1' data-idx='{{idx}}' placeholder="请输入" /></dd>
+				</dl>
+			</li>
+			<li>
+				<span>奖品图片</span>
+				<dl>
+					<dd class='setImg'>
+						<view class='uploader-list' wx:for="{{item.img}}" wx:key="index" wx:key='imgidx' wx:for-index="imgidx" wx:for-item='items'>
+							<image src='{{items}}' data-index="{{imgidx}}" bindtap='previewImg1' mode='aspectFill' />
+							<image class='delete' data-index="{{imgidx}}" data-idx='{{idx}}' src='img/2.png' mode="aspectFill" bindtap='deleteImg' />
+						</view>
+						<view class='upAdd' data-idx='{{idx}}' bindtap='chooseImg' wx:if='{{defalutArr[idx].img.length<3}}'>
+							<image src='img/1.png' mode="widthFix" />
+						</view>
+					</dd>
+				</dl>
+			</li>
+			<li>
+				<span>中奖概率</span>
+				<dl>
+					<dd><input type="number" value='{{item.probability}}' bindinput="getVal" data-nameval='1' data-idx='{{idx}}' placeholder="请输入" /></dd>
+				</dl>
+			</li>
+			<li>
+				<span>抽奖限制</span>
+				<dl>
+					<dd class='setSwitch'>
+						<text>成员积分小于0没有积分抽中</text>
+						<van-switch checked="{{item.checked}}" active-color="#49A65C" size="44rpx" bind:change="onChange" />
+					</dd>
+				</dl>
+			</li>
+		</ul>
+		<button class="addBtn" bindtap="addData" wx:if='{{defalutArr.length<10}}'>
+			<image src="img/4.png"></image> 添加奖项
+		</button>
+	</view>
+
+	<view class="openSet">
+		<text class="timetit">时间设置</text>
+		<ul>
+			<li>
+				<text>每人每天最多抽奖次数</text>
+				<view class="sInput">
+					<input type="number" value="{{timeSetData.numbers}}" placeholder="" style="width:100rpx"/>次
+				</view>
+			</li>
+			<li>
+				<text>参与本次抽奖需消耗积分</text>
+				<view class="sInput">
+					<input type="number" value="{{timeSetData.consume.number}}" placeholder="" style="width:100rpx" />分
+					<van-switch checked="{{timeSetData.consume.check}}" active-color="#49A65C" size="44rpx" bind:change="onChange" style="margin-left:12rpx"/>
+				</view>
+			</li>
+			<li>
+				<text>开启奖品兑换有效期</text>
+				<view class="sInput">
+					<view bindtap="openTimeFun" class="timeData">{{timeSetData.prizeTime.time}}</view>
+					<van-popup show="{{ openOver }}" position="bottom" bindtap="onClose">
+						<van-datetime-picker type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}" bind:confirm="onInput" />
+					</van-popup>
+					<van-switch checked="{{timeSetData.prizeTime.check}}" active-color="#49A65C" size="44rpx" bind:change="onChange"  style="margin-left:12rpx"/>
+				</view>
+			</li>
+		</ul>
+	</view>
+	<view class="p4" bindtap="goCj">
+		<text>确认</text>
+	</view>
+
+</view>

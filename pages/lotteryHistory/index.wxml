@@ -1,0 +1,28 @@
+<!--pages/history/index.wxml-->
+<view class="luckDraw">
+	<header />
+	<view class="groupT">
+		<p>历史抽奖</p>
+    <ul>
+      <li wx:for='{{luckData}}'  wx:for-item='item' wx:key='index' wx:for-index='index'>
+        <span class="{{item.tys==0?'a':''||item.tys==1?'b':''||item.tys==2?'c':''||item.tys==3?'d':''}}">
+          <text>{{item.types}}</text>
+        </span>
+        <span>
+          <view class="title">{{item.title}}</view>
+          <view class="number">参与人数:<u class='bf'>{{item.number}}</u></view>
+          <view class="time">抽奖时间:<u class='bf'>{{item.time}}</u></view>
+          <view class="time" wx:if='{{item.timeInterval}}'>抽奖时段:<u class='bf'>{{item.timeInterval}}</u></view>
+          <view class="btn">
+            <i>数据统计</i>
+            <i>发货详情</i>
+            <i>撤销</i>
+          </view>
+        </span>
+      </li>
+    </ul>
+	</view>
+  <view class="backBtn">
+    <button class="bottons">返回群中心</button>
+  </view>
+</view>

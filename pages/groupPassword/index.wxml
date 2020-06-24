@@ -1,0 +1,25 @@
+<!--pages/groupPassword/index.wxml-->
+<view class="groupPSD">
+	<header />
+	<view class="content">
+		<block>
+			<text>系统指令设置</text>
+			<i>群内直接发送指令，精准匹配，可呼出社群空间</i>
+		</block>
+		<block>
+			<view class="setList">
+				<span wx:for='{{setData}}' wx:for-item='item' wx:key='index' wx:for-index='index'>
+					<text>{{item.name}}</text>
+					<input type="text" placeholder="请输入" value="{{item.val}}" />
+				</span>
+			</view>
+		</block>
+	</view>
+	<view class="botBtn">
+		<view class="botBox">
+			<button>返回群中心</button>
+			<button>保存</button>
+		</view>
+
+	</view>
+</view>

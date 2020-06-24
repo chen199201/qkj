@@ -1,0 +1,10 @@
+miniprogram_npm/
+*.gitignore
+*.json
+*.md
+*.ts
+*.js
+*.wxml
+*.wxss
+*.wxs
+node_modules/vant-weapp/LICENSE

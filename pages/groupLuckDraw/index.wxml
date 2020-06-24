@@ -1,0 +1,32 @@
+<!--pages/groupSign/index.wxml-->
+<view class="luckDraw">
+	<header />
+	<view class="headB">
+		<span>
+			<image src="img/1.png" />
+			<text>历史抽奖</text>
+		</span>
+		<span>
+			<image src="img/2.png" />
+			<text>发起抽奖</text>
+		</span>
+	</view>
+	<view class="groupT">
+		<p>群抽奖</p>
+    <ul>
+      <li wx:for='{{luckData}}'  wx:for-item='item' wx:key='index' wx:for-index='index'>
+        <span class="{{item.tys==0?'a':''||item.tys==1?'b':''||item.tys==2?'c':''||item.tys==3?'d':''}}">
+          <text>{{item.types}}</text>
+        </span>
+        <span>
+          <text class="title">{{item.title}}</text>
+          <text class="number">参与人数:{{item.number}}</text>
+          <text class="time">抽奖时间:{{item.time}}</text>
+        </span>
+      </li>
+    </ul>
+	</view>
+  <view class="backBtn">
+    <button class="bottons">返回群中心</button>
+  </view>
+</view>
