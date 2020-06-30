@@ -1,0 +1,131 @@
+/* pages/prizeList/index.wxss */
+.prizeList{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #F6F6F6;
+  overflow-y: scroll;
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+.explain{
+  padding: 24rpx;
+  font-size: 24rpx;
+  color: #333;
+  background: white;
+  border-radius: 8rpx;
+  line-height: 34rpx;
+  box-shadow:0px 2rpx 4rpx 0px rgba(0,0,0,0.06);
+}
+.title{
+  height: 94rpx;
+  line-height: 94rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+.prizeList ul{
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 220rpx;
+}
+.prizeList ul li{
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background: white;
+  padding: 24rpx;
+  box-shadow:0px 2rpx 4rpx 0px rgba(0,0,0,0.06);
+  border-radius: 8rpx;
+  margin-bottom: 12rpx;
+}
+.prizeList ul li span{
+  display: inline-flex;
+  width: 100%;
+}
+.prizeList ul li span:first-child{
+  justify-content: space-between;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx dashed #F1F1F1;
+  box-sizing: border-box;
+}
+.prizeList ul li p{
+  display: inline-flex;
+}
+.prizeList ul li p image{
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 12rpx;
+}
+.prizeList ul li p:first-child text{
+  width: 394rpx;
+}
+.prizeList ul li p text{
+  font-size: 32rpx;
+  color: #333;
+}
+.prizeList ul li span:nth-child(2){
+  font-size: 24rpx;
+  justify-content: space-between;
+  margin: 18rpx 0 40rpx 0;
+}
+.prizeList ul li span:nth-child(3){
+  justify-content: flex-end;
+  margin-right: 8rpx;
+}
+.prizeList ul li span:nth-child(3) u{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52rpx;
+  padding: 0 24rpx 0 24rpx;
+  box-sizing: border-box;
+  border-radius: 30rpx;
+  box-shadow:0px 2px 4px 0px rgba(0,0,0,0.06);
+  box-sizing: border-box;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+  border: 2rpx solid #999999;
+  color: #999999;
+}
+.prizeList ul li span:nth-child(3) .look{
+  color: #49A65C;
+  border: 2rpx solid #49A65C;
+}
+.prizeList ul li span:nth-child(3) .set{
+  color: #FFBF46;
+  border: 2rpx solid #FFBF46;
+}
+.backBtn{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 98rpx;
+  background: white;
+  z-index: 1;
+  box-shadow:0px -2px 8px 0px rgba(0,0,0,0.06);
+  padding: 0 24rpx 0 24rpx;
+  box-sizing: border-box;
+
+}
+.backBtn navigator{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: white;
+  font-weight: normal;
+}
+.backBtn navigator:first-child{
+  border-radius:44rpx 0px 0px 44rpx;
+  background: #FFBF46;
+}
+.backBtn navigator:last-child{
+  border-top-right-radius: 44rpx;
+  border-bottom-right-radius: 44rpx;
+  background: #49A65C;
+}

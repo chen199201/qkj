@@ -1,0 +1,35 @@
+<!--pages/prizeList/index.wxml-->
+<floatmenu class='pubMenu' color='#333' bgcolor='#fff' title='奖品列表' />
+<view class="prizeList">
+	<view class="explain">
+		*添加群积分奖品后，可自定义兑换奖品，群成员可消耗个人积分进行兑换
+	</view>
+	<view class="title">奖品列表（89）</view>
+	<ul>
+		<li wx:for='{{przData}}' wx:for-item='item' wx:key='index' wx:for-index='index'>
+			<span>
+				<p>
+					<image src="{{item.logo}}"></image>
+					<text>{{item.name}}</text>
+				</p>
+				<p>
+					<van-switch checked="{{item.check}}" active-color="#49A65C" data-index='{{index}}' size="44rpx" bind:change="onChange" />
+				</p>
+			</span>
+			<span>
+				<i>所需积分：<b>{{item.need}}</b></i>
+				<i>兑换次数：<b>{{item.exchange}}</b></i>
+				<i>剩余库存：<b>{{item.stock}}</b></i>
+			</span>
+			<span>
+				<u class='look' bindtap='look' data-index='1'>查看详情</u>
+				<u class='set' bindtap='look' data-index='2'>编辑</u>
+				<u class='del' bindtap='del'>删除</u>
+			</span>
+		</li>
+	</ul>
+	<view class="backBtn">
+		<navigator>返回群中心</navigator>
+		<navigator url="../../pages/newPrize/index">新增奖品</navigator>
+	</view>
+</view>

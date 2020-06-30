@@ -1,0 +1,31 @@
+<!--pages/myZone/index.wxml-->
+<view class="myZone">
+	<view class="header">
+		<p class='title'>我的空间</p>
+		<p class='search'>
+			<image src="../../img/search.png"></image>
+			<input type="text" placeholder="搜索" />
+		</p>
+	</view>
+	<view class="nav">
+		<view class="navList">
+			<text class="navIndex">我开通的</text>
+			<text>我参与的</text>
+		</view>
+		<view class="navInfo">
+			<li wx:for='{{myOpenData}}' wx:for-item='item' wx:for-index='index' wx:key='index' bindtap='jump'>
+				<p>
+					<image src="{{item.logo}}" />
+				</p>
+				<p>
+					<span>{{item.title}}</span>
+					<span>
+						<i wx:if='{{item.isGroup}}'>群抽奖</i>
+						<u>{{item.time}}</u>
+					</span>
+				</p>
+			</li>
+		</view>
+	</view>
+  <tabbar routername='{{routerName}}'/>
+</view>

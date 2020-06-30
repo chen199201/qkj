@@ -1,0 +1,45 @@
+<!--pages/groupMember/index.wxml-->
+<view class="groupMember">
+	<floatmenu title='群成员'/>
+	<view class="searchBox">
+		<span>刷新</span>
+		<p class='search'>
+			<image src="../../img/search.png"></image>
+			<input type="text" placeholder="搜索" />
+		</p>
+	</view>
+	<view class="infoList">
+		<ul>
+			<view class="dataType">
+				<view>
+					<text>群成员</text>
+					<text>群名片</text>
+				</view>
+				<view>
+					<text>入群时间</text>
+					<text>操作</text>
+				</view>
+			</view>
+			<view class="dataLine">
+				<li wx:for='{{memberData}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+					<view>
+						<image src="{{item.logo}}"></image>
+						<text class="dataName">{{item.name}}</text>
+						<text class="identity qz" wx:if='{{item.identity==0}}'>群主</text>
+						<text class="identity gl" wx:elif='{{item.identity==1}}'>群管</text>
+						<text class="identity" wx:else></text>
+						<text class="dataTime">{{item.groupName}}</text>
+						<span class='dataBtn'>{{item.jionTime}}</span>
+					</view>
+					<view>
+						<text class="dataLook" wx:if='{{item.identity==1}}' data-identity='{{item.identity}}' data-index='{{index}}' bindtap="cancel">取消群管</text>
+						<text class="dataLook setGl" wx:if="{{item.identity==3}}"  data-identity='{{item.identity}}' data-index='{{index}}' bindtap="cancel">设为群管</text>
+					</view>
+				</li>
+			</view>
+		</ul>
+	</view>
+	<view class="backBtn">
+		<button class="bottons">确认</button>
+	</view>
+</view>

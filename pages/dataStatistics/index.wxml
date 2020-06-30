@@ -1,0 +1,35 @@
+<!--pages/dataStatistics/index.wxml-->
+<view class="dataStat">
+	<floatmenu class='pubMenu' color='#333' title='数据统计' bgcolor='#fff' />
+	<view class="dataTit">奖品设置</view>
+	<view class="dataList">
+		<ul>
+			<view class="dataType">
+				<view>
+					<text>成员</text>
+					<text>状态</text>
+				</view>
+				<view>
+					<text>收货地址</text>
+				</view>
+			</view>
+			<view class="dataLine">
+				<li wx:for='{{20}}'>
+					<view>
+						<image src="../../img/test.png"></image>
+						<text class="dataName">Edith Munoz</text>
+						<span class='dataBtn'>
+							<i class='send'>确认发货</i>
+							<i class='over'>已过期</i>
+							<!-- <i class='complete'>已过期</i> -->
+						</span>
+					</view>
+					<view>
+						<text class="dataLook">查看地址</text>
+					</view>
+				</li>
+			</view>
+		</ul>
+	</view>
+	<backbtn text='返回群中心'/>
+</view>

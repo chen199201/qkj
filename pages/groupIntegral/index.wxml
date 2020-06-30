@@ -1,0 +1,96 @@
+<!--pages/groupIntegral/index.wxml-->
+<view>
+	<view class="header">
+		<floatmenu class='pubMenu' color='#fff' title='我的空间' />
+		<view class="setBtn">
+			<navigator url="../../pages/ruleSet/index">规则设置</navigator>
+			<navigator url="../../pages/prizeList/index">奖品设置</navigator>
+		</view>
+		<view class="userInfo">
+			<image src="../../img/test.png"></image>
+			<span class='userName'>Herman Chambers</span>
+			<span class='groupName'>群：七七八八叨逼叨</span>
+			<span class='userLine'>
+				<i>菜鸡</i>
+				<b class='line'>
+					<u class='nowLine'></u>
+					<u class='allLine'></u>
+				</b>
+				<i>牛逼</i>
+			</span>
+			<span class='userJy'>
+				<i>588</i>/<i>899</i>
+			</span>
+		</view>
+	</view>
+	<view class="groupBox">
+		<view class="groupRouter">
+			<span wx:for='{{jumpLink}}' wx:for-item='item' wx:for-index='index' wx:key='index' data-link='{{item.link}}' bindtap='jumpF'>
+				<image src="{{item.img}}"></image>
+				<i>{{item.text}}</i>
+			</span>
+		</view>
+		<view class='groupSearch'>
+			<span class='reSet'>积分重置</span>
+			<span class='reInput'>
+				<image></image>
+				<input type="text" placeholder="搜索" />
+			</span>
+		</view>
+		<view class="groupList">
+			<ul>
+				<block>
+					<view class="listText">
+						<text>排名</text>
+						<text>成员</text>
+					</view>
+					<view class="listText" style="flex:1">
+						<text>群名片</text>
+						<text>当前积分</text>
+					</view>
+				</block>
+				<block>
+					<li wx:for='{{listData}}' wx:for-item='item' wx:key='index' wx:for-index='index'>
+						<span class='rank'>{{index+1}}</span>
+						<span class='info'>
+							<u>
+								<image src="{{item.logo}}"></image>
+							</u>
+							<u>
+								<i>{{item.name}}</i>
+								<i wx:if='{{item.leader}}'>{{item.identity}}</i>
+								<i wx:else class='istube'>{{item.identity}}</i>
+							</u>
+						</span>
+						<span class='name'>{{item.groupName}}</span>
+						<span class='number'>{{item.integralNum}}</span>
+						<span class='set'>
+							<image src="img/5.png"></image>
+						</span>
+					</li>
+				</block>
+			</ul>
+		</view>
+	</view>
+	<backbtn text='返回群中心'/>
+	<van-overlay show="{{jflay}}" bindtap='jfClose'>
+		<view class="jfBox">
+			<view class="jfBoxInfo">
+				<image src="img/10.png" class="closeImg"></image>
+				<p>积分任务说明</p>
+				<ul>
+					<li wx:for='{{integralTask}}' wx:for-item='item' wx:key='index' wx:for-index='index'>
+						<span>
+							<image src="{{item.logo}}"></image>
+							<i>
+								<u>{{item.title}}</u>
+								<u>{{item.explain}}</u>
+							</i>
+						</span>
+						<span>+{{item.addNum}}分</span>
+					</li>
+				</ul>
+			</view>
+		</view>
+	</van-overlay>
+</view>

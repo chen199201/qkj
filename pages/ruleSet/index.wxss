@@ -1,0 +1,267 @@
+/* pages/ruleSet/index.wxss */
+.ruleSet {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: #F6F6F6;
+
+}
+
+.ruleBox {
+  padding: 0 24rpx 0 24rpx;
+  height: 100%;
+}
+
+.jfSet {
+  display: inline-flex;
+  width: 100%;
+  padding: 0 24rpx 0 24rpx;
+  height: 92rpx;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  box-shadow: 0px 2rpx 4rpx 0px rgba(0, 0, 0, 0.06);
+  border-radius: 8rpx;
+  margin-top: 24rpx;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.dataTit {
+  height: 94rpx;
+  line-height: 94rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+.levelSet{
+  margin-bottom: 140rpx;
+}
+.setBox,.levelSet {
+  display: flex;
+  padding: 24rpx;
+  background: white;
+  box-shadow: 0px 2rpx 4rpx 0px rgba(0, 0, 0, 0.06);
+  border-radius: 8rpx;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.setBox .a,.levelSet .a  {
+  display: inline-flex;
+  width: 100%;
+  height: 52rpx;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24rpx;
+}
+
+.setBox .a i,.levelSet .a i{
+  font-size: 30rpx;
+  color: #333;
+}
+
+.setBox .a u,.levelSet .a u {
+  width: 104rpx;
+  height: 52rpx;
+  text-align: center;
+  line-height: 52rpx;
+  font-size: 28rpx;
+  color: #49A65C;
+  box-sizing: border-box;
+  border-radius: 29rpx;
+  border: 2rpx solid #49A65C;
+}
+
+.setBox .b,.levelSet .setc {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #999;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #EEEEEE;
+  box-sizing: border-box;
+}
+
+.setBox .b span,
+.setBox .c span {
+  display: inline-flex;
+}
+
+.setBox .b span:first-child i:first-child,
+.setBox .c li span:first-child i:first-child {
+  width: 120rpx;
+  margin-right: 280rpx;
+}
+.setBox .c li span:first-child i:last-child{
+  display: inline-flex;
+  position: relative;
+  width: 80rpx;
+  height: 34rpx;
+}
+.setBox .c li span:first-child i:last-child input{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 34rpx;
+  position: absolute;
+  border: 2rpx solid #49A65C;
+  box-sizing: border-box;
+  min-height: 34rpx;
+}
+.setBox .c {
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.setBox .c li {
+  display: inline-flex;
+  width: 100%;
+  margin-top: 12rpx;
+  font-size: 24rpx;
+  justify-content: space-between;
+}
+
+.setBox .d {
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 12rpx;
+  background: #F9F9F9;
+  border-radius: 4rpx;
+  margin: 12rpx 0 12rpx 0;
+  box-sizing: border-box;
+}
+
+.setBox .d span {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.setBox .d u {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.setBox .d:last-child {
+  margin-bottom: 0;
+}
+
+.boxa {
+  padding-bottom: 40rpx;
+  border-bottom: 2rpx solid #F1F1F1;
+  box-sizing: border-box;
+}
+
+.boxb {
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.boxba {
+  width: 100%;
+  font-size: 30rpx;
+  color: #333;
+  margin: 22rpx 0 20rpx 0;
+}
+
+.boxbb {
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.boxbb span {
+  display: inline-flex;
+  width: 100%;
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+.boxbb span i:first-child{
+  margin-right: 20rpx;
+}
+.boxbb span:last-child{
+  margin-bottom: 0;
+}
+.levelSet .setb{
+  font-size: 24rpx;
+  color: #999990;
+  margin-bottom: 30rpx;
+}
+.levelSet .setc{
+  justify-content: space-between;
+}
+.levelSet .setc i:nth-child(1),.levelSet .setd li i:nth-child(1){
+  width: 100rpx;
+}
+.levelSet .setc i:nth-child(2),.levelSet .setd li i:nth-child(2){
+  width: 200rpx;
+}
+
+.levelSet .setc i:nth-child(2),.levelSet .setd li i:nth-child(2)
+
+.levelSet .setc i:nth-child(3),.levelSet .setd li i:nth-child(3){
+  width: 100rpx;
+  position: relative;
+}
+.levelSet .setd li i:nth-child(3) input{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 34rpx;
+  position: absolute;
+  border: 2rpx solid #49A65C;
+  box-sizing: border-box;
+  min-height: 34rpx;
+}
+
+.levelSet .setd{
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+  font-size: 24rpx;
+  color: #333;
+  margin-top: 24rpx;
+}
+.levelSet .setd li{
+  display: inline-flex;
+  width: 100%;
+  height: 34rpx;
+  justify-content: space-between;
+  margin-bottom: 24rpx;
+}
+.backBtn{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 98rpx;
+  background: white;
+  z-index: 1;
+  box-shadow:0px -2px 8px 0px rgba(0,0,0,0.06);
+
+}
+.backBtn .bottons{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin: 0 24rpx 0 24rpx;
+  background: linear-gradient(135deg,rgba(105,212,121,1) 0%,rgba(73,166,92,1) 100%);
+  border-radius:44rpx;
+  font-size: 32rpx;
+  color: white;
+  font-weight: normal;
+}

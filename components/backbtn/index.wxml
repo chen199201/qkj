@@ -1,0 +1,4 @@
+<!--components/backBtn/index.wxml-->
+	<view class="backBtn">
+		<button class="bottons" bindtap="goHome">{{text}}</button>
+	</view>

@@ -1,0 +1,24 @@
+/* components/backBtn/index.wxss */
+.backBtn {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 98rpx;
+  background: white;
+  box-shadow:0px -2rpx 8rpx 0px rgba(0,0,0,0.06);
+}
+
+.backBtn .bottons {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin: 0 24rpx 0 24rpx;
+  background: linear-gradient(135deg, rgba(105, 212, 121, 1) 0%, rgba(73, 166, 92, 1) 100%);
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  color: white;
+  font-weight: normal;
+}

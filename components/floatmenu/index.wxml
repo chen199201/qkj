@@ -1,0 +1,21 @@
+<!--components/floatmenu/index.wxml-->
+<view class="menus" style="background:{{bgcolor}}">
+	<p class='title'>
+		<view class="leftTab">
+			<span bindtap='backUp'>
+				<image src="img/1.png"></image>
+				<i></i>
+			</span>
+			<span bindtap='menuShow'>
+				<image src="img/2.png"></image>
+			</span>
+		</view>
+		<b style='color:{{color}};'>{{title}}</b>
+		<view class="floatMenu" wx:if='{{show}}'>
+			<li wx:for='{{floatData}}' wx:for-item='item' wx:for-index='index' data-item='{{item}}' bindtap='jumpLink'>
+				<image src="{{item.logo}}"></image>
+				<i>{{item.name}}</i>
+			</li>
+		</view>
+	</p>
+</view>

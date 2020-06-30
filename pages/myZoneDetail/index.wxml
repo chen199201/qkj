@@ -1,0 +1,63 @@
+<!--pages/myZoneDetail/index.wxml-->
+<view class="myZone">
+	<view class="header">
+		<floatmenu class='pubMenu' color='#fff'  title='我的空间'/>
+		<view class="groupInfo">
+			<p>
+				<span>
+					<image></image>
+				</span>
+				<span>
+					<u>分享是学习他姥姥(我是群名)</u>
+					<u>
+						<i>群主:Sign.89</i>
+						<i>群成员:89<image src="img/4.png"></image></i>
+					</u>
+				</span>
+			</p>
+			<p>
+				<span>签到</span>
+			</p>
+		</view>
+		<view class="mylevel">
+			<view class="mylevelBox">
+				<p>
+					<image src="img/5.png"></image>
+					<i>LV.8</i>
+					<text>我的积分:89</text>
+				</p>
+				<p>
+					<image src="img/3.png" class="logos" wx:for='{{3}}'></image>
+					<text>本月积分榜</text>
+					<image src="img/6.png" class="jt"></image>
+				</p>
+			</view>
+		</view>
+	</view>
+	<view class="nav">
+		<p class='navTit'>最新活动</p>
+		<view class="listData"  wx:for='{{activityData}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+			<p>
+				<span>
+					<i>
+						<image class="tag" src="{{item.isSign==0?'img/7.png':'img/8.png'}}" />
+						<text>{{item.title}}</text>
+					</i>
+					<i>
+						<image src="img/6.png" class="jt"></image>
+					</i>
+				</span>
+				<span>{{item.time}}</span>
+			</p>
+			<p>
+				<span>
+					<i>
+						<image class="userLogo" src="{{items}}" wx:for='{{item.imgData}}' wx:for-item='items' wx:for-index = 'idx' wx:key='idx'></image>
+						<text>等{{item.people}}个成员未参与</text>
+					</i>
+					<i>去提醒</i>
+				</span>
+			</p>
+		</view>
+	</view>
+</view>

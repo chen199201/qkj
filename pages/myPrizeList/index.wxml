@@ -1,0 +1,30 @@
+<!--pages/myPrizeList/index.wxml-->
+<floatmenu class='pubMenu' color='#333' title='奖品列表' />
+<view class="prizeList">
+	<view class="explain">
+		*添加群积分奖品后，可自定义兑换奖品，群成员可消耗个人积分进行兑换
+	</view>
+	<view class="title">
+		<i>积分兑换</i>
+		<i>当前积分:<u>8899</u></i>
+	</view>
+	<ul>
+		<li wx:for='{{przData}}' wx:for-item='item' wx:key='index' wx:for-index='index'>
+			<span>
+				<p>
+					<image src="{{item.logo}}"></image>
+					<dd>
+						<i>{{item.name}}</i>
+						<u>所需积分:<em>{{item.need}}</em></u>
+					</dd>
+				</p>
+				<p>
+					<b>立即兑换</b>
+				</p>
+			</span>
+		</li>
+	</ul>
+	<view class="backBtn">
+		<button class="bottons" bindtap="lookMyprize">查看我的兑换详情</button>
+	</view>
+</view>

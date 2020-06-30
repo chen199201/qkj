@@ -1,0 +1,120 @@
+<!--pages/ruleSet/index.wxml-->
+<view class="ruleSet">
+	<floatmenu class='pubMenu' color='#333' bgcolor='#fff' title='规则设置' />
+	<view class="ruleBox">
+		<view class="jfSet">
+			<i>当前群已开启群积分</i>
+			<van-switch checked="{{openIntegral}}" active-color="#49A65C" size="44rpx" bind:change="onChange" />
+		</view>
+		<view class="dataTit">积分操作</view>
+		<view class="setBox">
+			<view class="boxa">
+				<p class='a'>
+					<i>方式一：系统直接添加</i>
+					<u bindtap='seta'>{{typeText}}</u>
+				</p>
+				<p class='b'>
+					<span>
+						<i>操作</i>
+						<i>积分</i>
+					</span>
+					<span>
+						<i>疲劳值</i>
+					</span>
+				</p>
+				<p class='c'>
+					<li wx:for='{{mode1}}' wx:key='index' wx:for-index="index" wx:for-item='item'>
+						<span>
+							<i>{{item.operation}}</i>
+							<i>
+								<u wx:if='{{!typea}}'>{{item.integral}}</u>
+								<input wx:else type="text" bindinput='getVal' bindblur='setInput' data-index='{{index}}' data-inVal='{{item.integral}}' value='{{item.integral}}'/>
+							</i>
+						</span>
+						<span>
+							<i>{{item.fatigue}}</i>
+						</span>
+					</li>
+				</p>
+				<p class='d'>
+					<span>
+						<i>邀人进群积分播报</i>
+						<van-switch checked="{{jfCheck}}" active-color="#49A65C" size="44rpx" bind:change="jfChange" />
+					</span>
+					<u>例如：@嘻嘻哈哈大宣传 您成功邀请七七八八进群，获得积分89分，当前可用积分189分</u>
+				</p>
+				<p class='c'>
+					<li wx:for='{{punch}}' wx:key='index' wx:for-index="index" wx:for-item='item'>
+						<span>
+							<i>{{item.name}}</i>
+							<i>{{item.integral}}</i>
+						</span>
+						<span>
+							<i>{{item.fatigue}}</i>
+						</span>
+					</li>
+				</p>
+				<p class='d'>
+					<span>
+						<i>口令打卡积分播报</i>
+						<van-switch checked="{{pswCheck}}" active-color="#49A65C" size="44rpx" bind:change="pswChange" />
+					</span>
+					<u>例如：@嘻嘻哈哈大宣传 打卡成功，获得积分89分，当前可用积分189分</u>
+				</p>
+				<p class='c'>
+					<li wx:for='{{sign}}' wx:key='index' wx:for-index="index" wx:for-item='item'>
+						<span>
+							<i>{{item.name}}</i>
+							<i>{{item.integral}}</i>
+						</span>
+						<span>
+							<i>{{item.fatigue}}</i>
+						</span>
+					</li>
+				</p>
+				<p class='d'>
+					<span>
+						<i>群内签到积分播报</i>
+						<van-switch checked="{{qdCheck}}" active-color="#49A65C" size="44rpx" bind:change="qdChange" />
+					</span>
+					<u>例如：@嘻嘻哈哈大宣传 签到成功，获得积分89分，当前可用积分189分</u>
+				</p>
+			</view>
+			<view class="boxb">
+				<p class='boxba'>方式二：群内指令修改积分</p>
+				<p class='boxbb'>
+					<span wx:for='{{mode2}}' wx:key='index' wx:for-index="index" wx:for-item='item'>
+						<i>{{index+1}}.</i>
+						<i>{{item.text}}</i>
+					</span>
+				</p>
+			</view>
+		</view>
+		<view class="dataTit">等级操作</view>
+		<view class="levelSet">
+			<p class='a'>
+				<i>等级设置</i>
+				<u bindtap='setb'>{{levelText}}</u>
+			</p>
+			<p class='setb'>达到对应等级所需积分，成员等级升级。升级后，积分兑换造成的有效积分的减少并不会影响等级</p>
+			<p class='setc'>
+				<i>等级</i>
+				<i>名称</i>
+				<i>所需积分</i>
+				<i>操作</i>
+			</p>
+			<p class='setd'>
+				<li wx:for='{{levelSet}}' wx:key='index' wx:for-index="index" wx:for-item='item'>
+					<i>{{index+1}}</i>
+					<i>{{item.name}}</i>
+					<i>
+						<u wx:if='{{!typeb}}'>{{item.need}}</u>
+						<input wx:else type="text" bindinput='djgetVal' data-index='{{index}}' data-inVal='{{item.need}}' value='{{item.need}}'/>
+					</i>
+					<i bindtap='del' data-index='{{index}}'>删除</i>
+				</li>
+			</p>
+		</view>
+	</view>
+	<backbtn text='返回群中心'/>
+</view>

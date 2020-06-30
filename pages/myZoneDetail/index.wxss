@@ -1,0 +1,344 @@
+/* pages/myZoneDetail/index.wxss */
+.myZone {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.myZone .header {
+  position: relative;
+  display: flex;
+  height: 306rpx;
+  padding: 0 24rpx 0 24rpx;
+  background: url('https://image.sqqmall.com/2020/06/29/299e7a4569fb350c.png') no-repeat;
+  background-size: cover;
+  box-shadow: 0px 2rpx 2rpx 0px rgba(0, 0, 0, 0.06);
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.myZone .header .title {
+  position: relative;
+  width: 100%;
+  height: 52rpx;
+  margin: 58rpx 0 34rpx 0;
+  text-align: center;
+  line-height: 52rpx;
+  font-size: 37rpx;
+  color: white;
+}
+
+.myZone .header .title .leftTab {
+  position: absolute;
+  display: inline-flex;
+  width: 174rpx;
+  height: 64rpx;
+  padding: 0 26rpx 0 26rpx;
+  border: 1rpx solid #EEEEEE;
+  box-sizing: border-box;
+  border-radius: 32rpx;
+  left: 0;
+  top: -8rpx;
+  justify-content: space-between;
+}
+
+.myZone .header .title .leftTab span {
+  display: inline-flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.myZone .header .title .leftTab image {
+  position: relative;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.myZone .header .title .leftTab span:first-child i {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 2rpx;
+  height: 40rpx;
+  background: #EEEEEE;
+  left: 50%;
+  margin-left: -rpx;
+}
+
+.groupInfo {
+  display: flex;
+  width: 100%;
+}
+
+.groupInfo p {
+  display: inline-flex;
+  color: white;
+}
+
+.groupInfo p span {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.groupInfo p span:first-child image {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 8rpx;
+  background: white;
+  margin-right: 12rpx;
+}
+
+.groupInfo p span u:first-child {
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+}
+
+.groupInfo p span u:last-child {
+  font-size: 24rpx;
+}
+
+.groupInfo p span u:last-child i:first-child {
+  padding-right: 20rpx;
+  margin-right: 20rpx;
+  border-right: 2rpx solid #FFFFFF;
+  box-sizing: border-box;
+}
+
+.groupInfo p span u:last-child i:last-child {
+  display: inline-flex;
+  align-items: center;
+}
+
+.groupInfo p span u:last-child i:last-child image {
+  width: 28rpx;
+  height: 28rpx;
+  margin-left: 4rpx;
+}
+
+.groupInfo p:last-child span {
+  display: inline-flex;
+  width: 96rpx;
+  height: 44rpx;
+  border-radius: 8rpx;
+  border: 2rpx solid #fff;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.mylevel {
+  position: absolute;
+  width: 100%;
+  height: 80rpx;
+  bottom: -40rpx;
+  left: 0;
+}
+
+.mylevelBox {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  margin: 0 24rpx 0 24rpx;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 40rpx;
+  box-shadow: 0px 0px 12rpx 8rpx rgba(13, 97, 30, 0.06);
+  padding: 0 24rpx 0 24rpx;
+}
+
+.mylevelBox p {
+  display: inline-flex;
+  height: 100%;
+  align-items: center;
+  color: #333333;
+}
+
+.mylevelBox p:first-child image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 12rpx;
+}
+
+.mylevelBox p:first-child i {
+  display: inline-flex;
+  align-items: center;
+  height: 28rpx;
+  padding: 0 6rpx 0 8rpx;
+  border: 2rpx solid #333333;
+  border-radius: 4rpx;
+  box-sizing: border-box;
+  font-size: 20rpx;
+  margin-right: 10rpx;
+}
+
+.mylevelBox p:first-child text {
+  font-size: 24rpx;
+}
+
+.mylevelBox p:last-child .logos {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 5rpx;
+  border-radius: 50%;
+}
+
+.jt {
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.mylevelBox p:last-child text {
+  font-size: 24rpx;
+  margin-right: 4rpx;
+}
+
+.nav {
+  display: flex;
+  margin-top: 40rpx;
+  padding: 0 24rpx 0 24rpx;
+  flex-wrap: wrap;
+}
+
+.nav .navTit {
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #333333;
+  font-size: 32rpx;
+}
+
+.listData {
+  display: inline-flex;
+  width: 100%;
+  padding: 0 24rpx 0 24rpx;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  margin-bottom: 20rpx;
+}
+
+.listData p {
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.listData p span .tag {
+  width: 84rpx;
+  height: 28rpx;
+}
+
+.listData p:first-child {
+  align-content: flex-start;
+  padding-bottom: 30rpx;
+  border-bottom: 2rpx dashed #F1F1F1;
+  box-sizing: border-box;
+}
+
+.listData p:first-child span {
+  display: inline-flex;
+  width: 100%;
+}
+
+.listData p:first-child span:first-child {
+  margin: 20rpx 0 20rpx;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.listData p:first-child span:first-child i {
+  display: inline-flex;
+  height: 100%;
+  align-items: center;
+}
+
+.listData p:first-child span:first-child i image {
+  margin-right: 12rpx;
+}
+
+.listData p:first-child span:last-child {
+  font-size: 24rpx;
+  color: #999;
+  align-items: center;
+}
+
+.listData p:first-child span:last-child::before {
+  display: inline-block;
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background: #FFBF46;
+  content: '';
+  margin-right: 6rpx;
+}
+.listData p:last-child {
+  height: 42rpx;
+  padding:22rpx 0 22rpx 0;
+}
+.listData p:last-child span {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.listData p:last-child span i{
+  display: inline-flex;
+  align-items: center;
+}
+.listData p:last-child span i .userLogo{
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  margin-right: 4rpx;
+}
+.listData p:last-child span i text{
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 6rpx;
+}
+.listData p:last-child span i:last-child{
+  font-size: 24rpx;
+  height: 40rpx;
+  padding: 0 12rpx 0 12rpx;
+  border-radius: 4rpx;
+  border: 2rpx solid #49A65C;
+  color: #49A65C;
+  box-sizing: border-box;
+}
+.floatMenu{
+  position: absolute;
+  display: flex;
+  padding: 24rpx 50rpx 24rpx 50rpx;
+  width: 260rpx;
+  height: 526rpx;
+  background: white;
+  border-radius: 8rpx;
+  z-index: 1;
+  top:92rpx;
+  box-shadow:0px 4rpx 8rpx 0px rgba(1,110,24,0.12);
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.floatMenu li{
+  display: inline-flex;
+  width: 100%;
+  height: 40rpx;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 48rpx;
+}
+.floatMenu li image{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 12rpx;
+}
+.floatMenu li i{
+  color: #666660;
+  font-size: 28rpx;
+}

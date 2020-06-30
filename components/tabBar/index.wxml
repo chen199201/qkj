@@ -1,0 +1,18 @@
+<!--components/tabBar/index.wxml-->
+	<view class="tabBar">
+		<li>
+			<image src="../../img/tba2.png" wx:if="{{routername=='pages/myZone/index'}}" />
+      <image src="../../img/tbb1.png" wx:else />
+			<text class="{{routername=='pages/prizeInfo/index'?'inRouter':''}}">空间</text>
+		</li>
+		<li>
+			<image src="../../img/tbb1.png" wx:if="{{routername=='pages/prizeInfo/index'}}" />
+      <image src="../../img/tbb1.png" wx:else />
+			<text>消息</text>
+		</li>
+		<li>
+			<image src="../../img/tbc1.png" wx:if="{{routername=='pages/prizeInfo/index'}}"/>
+      <image src="../../img/tbb1.png" wx:else />
+			<text>我的</text>
+		</li>
+	</view>
