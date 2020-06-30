@@ -1,6 +1,6 @@
 <!--pages/history/index.wxml-->
 <view class="luckDraw">
-	<header />
+	<floatmenu class='pubMenu' color='#333' title='历史记录' bgcolor='#fff' />
 	<view class="groupT">
 		<p>历史抽奖</p>
     <ul>
@@ -14,15 +14,13 @@
           <view class="time">抽奖时间:<u class='bf'>{{item.time}}</u></view>
           <view class="time" wx:if='{{item.timeInterval}}'>抽奖时段:<u class='bf'>{{item.timeInterval}}</u></view>
           <view class="btn">
-            <i>数据统计</i>
-            <i>发货详情</i>
+            <i bindtap='goStatistics'>数据统计</i>
+            <i bindtap='goOpen'>发货详情</i>
             <i>撤销</i>
           </view>
         </span>
       </li>
     </ul>
 	</view>
-  <view class="backBtn">
-    <button class="bottons">返回群中心</button>
-  </view>
+	<backbtn text='返回群中心'/>
 </view>

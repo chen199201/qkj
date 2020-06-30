@@ -1,7 +1,7 @@
 <!--pages/launchLottery/index.wxml-->
 <!-- 发起抽奖页面 -->
 <view class="lanuch">
-	<header style='width:100%' />
+	<floatmenu class='pubMenu' color='#333' title='新增抽奖' bgcolor='#fff' />
 	<block>
 		<view class="timeset">
 			<text class="timetit">时间设置</text>
@@ -66,7 +66,7 @@
 				<span>奖品图片</span>
 				<dl>
 					<dd class='setImg'>
-						<view class='uploader-list' wx:for="{{item.img}}" wx:key="index" wx:key='imgidx' wx:for-index="imgidx" wx:for-item='items'>
+						<view class='uploader-list' wx:for="{{item.img}}" wx:key='imgidx' wx:for-index="imgidx" wx:for-item='items'>
 							<image src='{{items}}' data-index="{{imgidx}}" bindtap='previewImg1' mode='aspectFill' />
 							<image class='delete' data-index="{{imgidx}}" data-idx='{{idx}}' src='img/2.png' mode="aspectFill" bindtap='deleteImg' />
 						</view>
@@ -92,6 +92,7 @@
 				</dl>
 			</li>
 		</ul>
+		
 		<button class="addBtn" bindtap="addData" wx:if='{{defalutArr.length<10}}'>
 			<image src="img/4.png"></image> 添加奖项
 		</button>

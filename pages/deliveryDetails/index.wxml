@@ -1,6 +1,6 @@
 <!--pages/delivery/index.wxml-->
 <view class="delivery">
-	<header />
+		<floatmenu class='pubMenu' color='#333' bgcolor='#fff' title='数据统计' />
 	<view class="groupT">
 		<p>奖品设置</p>
 		<ul>
@@ -10,7 +10,7 @@
 			</view>
 			<li wx:for='{{prizeData}}' wx:for-item='item' wx:key='index' wx:for-index='index'>
 				<span class='userImg'>
-					<image src="img/3.png" />
+					<image src="../../img/test.png" />
 					<text>{{item.name}}</text>
 				</span>
 				<span class='userNum'>
@@ -26,31 +26,38 @@
 	</view>
 	<view class="przSet">
 		<p>
-    奖品设置
-    <view bindtap="openTimeFun" class="timeData">{{openTime}}<image src="img/5.png"/></view>
-    </p>
-    <ul>
-      <view class="btnNum">
-        <span>
-          <text>参与人次</text>
-          <text>89</text>
-        </span>
-        <span>
-          <text>参与人数</text>
-          <text>89</text>
-        </span>
-      </view>
-      <view class="przType">
-        <text>成员</text>
-        <text>奖品</text>
-        <text>兑换时间</text>
-      </view>
-      <li></li>
-    </ul>
+			奖品设置
+			<view bindtap="openTimeFun" class="timeData">{{openTime}}
+				<image src="img/5.png" />
+			</view>
+		</p>
+		<ul>
+			<view class="btnNum">
+				<span>
+					<text>参与人次</text>
+					<text>89</text>
+				</span>
+				<span>
+					<text>参与人数</text>
+					<text>89</text>
+				</span>
+			</view>
+			<view class="przType">
+				<text>成员</text>
+				<text>奖品</text>
+				<text>兑换时间</text>
+			</view>
+			<view class="przList">
+				<li wx:for='{{6}}'>
+					<image src="../../img/test.png"></image>
+					<span class='peoName'>Irene Bell</span>
+					<span class='przName'>波音747播放47...</span>
+					<span class='przTime'>1975/11/06 08:09</span>
+				</li>
+			</view>
+		</ul>
 	</view>
-	<view class="backBtn">
-		<button class="bottons">返回群中心</button>
-	</view>
+	<backbtn text='返回群中心'/>
 	<van-popup show="{{ openOver }}" position="bottom" bindtap="onClose">
 		<van-datetime-picker type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}" bind:confirm="onInput" />
 	</van-popup>

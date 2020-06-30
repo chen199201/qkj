@@ -1,11 +1,23 @@
 {
   "pages": [
+    "pages/prizeList/index",
+    "pages/groupMember/index",
+    "pages/groupLuckDraw/index",
+    "pages/groupIntegral/index",
+    "pages/myZone/index",
+    "pages/ruleSet/index",
+    "pages/exchangeInfo/index",
+    "pages/newPrize/index",
+    "pages/myZoneDetail/index",
+    "components/floatmenu/index",
+    "pages/prizeInfo/index",
+    "pages/myPrizeList/index",
+    "pages/groupSign/index",
+    "pages/groupPassword/index",
+    "pages/dataStatistics/index",
     "pages/deliveryDetails/index",
     "pages/lotteryHistory/index",
     "pages/launchLottery/index",
-    "pages/groupLuckDraw/index",
-    "pages/groupSign/index",
-    "pages/groupPassword/index",
     "pages/index/index"
   ],
   "window": {
@@ -21,6 +33,13 @@
     "van-popup": "/miniprogram_npm/vant-weapp/popup/index",
     "van-datetime-picker": "/miniprogram_npm/vant-weapp/datetime-picker/index",
     "van-uploader": "/miniprogram_npm/vant-weapp/uploader/index",
-    "van-switch": "/miniprogram_npm/vant-weapp/switch/index"
+    "van-switch": "/miniprogram_npm/vant-weapp/switch/index",
+    "header": "./components/header/index",
+    "tabbar": "./components/tabBar/index",
+    "floatmenu": "./components/floatmenu/index",
+    "backbtn": "./components/backbtn/index",
+    "van-overlay": "/miniprogram_npm/vant-weapp/overlay/index",
+    "van-tab": "/miniprogram_npm/vant-weapp/tab/index",
+    "van-tabs": "/miniprogram_npm/vant-weapp/tabs/index"
   }
 }

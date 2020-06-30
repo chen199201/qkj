@@ -14,6 +14,19 @@ Page({
     ],
   },
 
+
+  //跳转到数据统计
+  goStatistics(){
+    wx.navigateTo({
+      url: '../deliveryDetails/index',
+    })
+  },
+  //跳转到发货详情
+  goOpen(){
+    wx.navigateTo({
+      url: '../dataStatistics/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
