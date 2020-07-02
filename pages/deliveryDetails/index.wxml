@@ -1,7 +1,7 @@
 <!--pages/delivery/index.wxml-->
 <view class="delivery">
 		<floatmenu class='pubMenu' color='#333' bgcolor='#fff' title='数据统计' />
-	<view class="groupT">
+	<view class="groupT {{isIpx?'myIpx':''}}">
 		<p>奖品设置</p>
 		<ul>
 			<view class="titles">

@@ -1,7 +1,8 @@
 <!--pages/myZone/index.wxml-->
+<floatmenu class='pubMenu' color='#fff' title='奖品列表' leftshow='{{false}}'   bigtop="{{bigtop}}"/>
+
 <view class="myZone">
-	<view class="header">
-		<p class='title'>我的空间</p>
+	<view class="header {{isIpx?'myIpx':''}}">
 		<p class='search'>
 			<image src="../../img/search.png"></image>
 			<input type="text" placeholder="搜索" />

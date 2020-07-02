@@ -7,53 +7,15 @@
   overflow-y: scroll;
 }
 
-.headB {
-  display: flex;
-  width: 100%;
-  height: 184rpx;
-  align-items: center;
-  justify-content: space-between;
-  background: white;
-  padding: 0 24rpx 0 23rpx;
-  box-sizing: border-box;
-}
-
-.headB span {
-  display: inline-flex;
-  flex: 1;
-  height: 136rpx;
-  align-items: center;
-}
-
-.headB span:first-child {
-  margin-right: 27rpx;
-  background: url('https://image.sqqmall.com/2020/06/24/92c3678cd447b3a2.png') no-repeat;
-  background-size: 100% 100%;
-}
-
-.headB span:last-child {
-  background: url('https://image.sqqmall.com/2020/06/24/f10c645fa9a33bce.png') no-repeat;
-  background-size: 100% 100%;
-}
-
-.headB span image {
-  width: 100rpx;
-  height: 100rpx;
-  margin: 0 40rpx 0 30rpx;
-}
-
-.headB span text {
-  font-size: 32rpx;
-  color: white;
-}
-
-
-
-
 .groupT {
   display: flex;
   padding: 0 24rpx 0 24rpx;
   flex-wrap: wrap;
+  margin-top: 127rpx;
+}
+
+.myIpx{
+  margin-top: 179rpx;
 }
 
 .groupT p {

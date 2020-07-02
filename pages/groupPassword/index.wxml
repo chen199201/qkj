@@ -1,7 +1,7 @@
 <!--pages/groupPassword/index.wxml-->
+<floatmenu class='pubMenu' color='#333' bgcolor='#fff' title='系统指令' />
 <view class="groupPSD">
-	<header />
-	<view class="content">
+	<view class="content {{isIpx?'myIpx':''}}">
 		<block>
 			<text>系统指令设置</text>
 			<i>群内直接发送指令，精准匹配，可呼出社群空间</i>
@@ -15,11 +15,8 @@
 			</view>
 		</block>
 	</view>
-	<view class="botBtn">
-		<view class="botBox">
-			<button>返回群中心</button>
-			<button>保存</button>
-		</view>
-
+	<view class="backBtn">
+		<navigator>返回群中心</navigator>
+		<navigator url="../../pages/newSign/index">保存</navigator>
 	</view>
 </view>

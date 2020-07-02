@@ -1,4 +1,5 @@
 // pages/groupIntegral/index.js
+import pubFun from '../../utils/pubFun'
 Page({
 
   /**
@@ -30,6 +31,7 @@ Page({
       {logo:'img/9.png',title:'口令打卡',explain:'5积分/次，疲劳值10',addNum:'10'},
     ],
     jflay:false, //积分弹窗
+    isIpx:pubFun.isIpx(),
   },
 
   jfClose(){

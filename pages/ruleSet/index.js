@@ -1,4 +1,5 @@
 // pages/ruleSet/index.js
+import pubFun from '../../utils/pubFun'
 Page({
 
   /**
@@ -36,6 +37,7 @@ Page({
 
     typeb:false,  //等级设置
     levelText:'设置',
+    isIpx:pubFun.isIpx(),
   },  
 
   //开启群积分

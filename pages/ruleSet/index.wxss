@@ -23,11 +23,13 @@
   background: white;
   box-shadow: 0px 2rpx 4rpx 0px rgba(0, 0, 0, 0.06);
   border-radius: 8rpx;
-  margin-top: 24rpx;
+  margin-top: 151rpx;
   font-size: 24rpx;
   color: #333;
 }
-
+.myIpx{
+  margin-top: 203rpx;
+}
 .dataTit {
   height: 94rpx;
   line-height: 94rpx;

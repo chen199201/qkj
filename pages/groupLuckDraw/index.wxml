@@ -1,7 +1,7 @@
 <!--pages/groupSign/index.wxml-->
 <view class="luckDraw">
-	<floatmenu class='pubMenu' color='#333' title='群抽奖' bgcolor='#fff' />
-	<view class="headB">
+	<floatmenu class='pubMenu' color='#333' title='群抽奖' bgcolor='#fff' bigtop="{{bigtop}}" />
+	<view class="headB {{isIpx?'myIpx':''}}">
 		<span bindtap='gohis'>
 			<image src="img/1.png" />
 			<text>历史抽奖</text>

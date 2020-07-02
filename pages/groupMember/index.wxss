@@ -12,7 +12,10 @@
   padding: 0 24rpx 20rpx 24rpx;
   box-sizing: border-box;
   border-bottom: 12rpx solid #F6F6F6;
-  
+  margin-top: 135rpx;
+}
+.myIpx{
+  margin-top: 187rpx;
 }
 .searchBox span{
   display: inline-flex;

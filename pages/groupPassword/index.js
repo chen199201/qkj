@@ -1,4 +1,5 @@
 // pages/groupPassword/index.js
+import pubFun from '../../utils/pubFun'
 Page({
 
   /**
@@ -9,7 +10,8 @@ Page({
       {name:'社群空间召唤指令',val:'社群空间'},
       {name:'签到召唤指令',val:'签到'},
       {name:'积分召唤指令',val:'积分'},
-    ]
+    ],
+    isIpx:pubFun.isIpx(),
   },
 
   /**

@@ -1,4 +1,5 @@
 // pages/myPrizeList/index.js
+import pubFun from '../../utils/pubFun'
 Page({
 
   /**
@@ -12,6 +13,7 @@ Page({
       {logo:'../../img/test.png',name:'易烊千玺的眼镜',check:'true',need:'89'},
       {logo:'../../img/test.png',name:'易烊千玺的眼镜',check:'false',need:'89'},
     ],
+    isIpx:pubFun.isIpx(),
   },
 
   lookMyprize(){

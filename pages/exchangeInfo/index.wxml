@@ -1,7 +1,7 @@
 <!--pages/exchangeInfo/index.wxml-->
 <view class="exchangeInfo">
 	<floatmenu class='pubMenu' color='#333' bgcolor='#fff' title='兑换信息' />
-	<view class="dataTit">奖品名称兑换详情</view>
+	<view class="dataTit {{isIpx?'myIpx':''}}">奖品名称兑换详情</view>
 	<view class="infoList">
 		<ul>
 			<view class="dataType">

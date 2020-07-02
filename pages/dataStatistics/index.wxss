@@ -12,8 +12,11 @@
   font-size: 32rpx;
   color: #333;
   text-indent: 24rpx;
+  margin-top: 127rpx;
 }
-
+.myIpx{
+  margin-top: 179rpx;
+}
 .dataList ul {
   display: flex;
   box-sizing: border-box;

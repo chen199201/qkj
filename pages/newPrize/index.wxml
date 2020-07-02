@@ -1,7 +1,7 @@
 <!--pages/newPrize/index.wxml-->
 <view class="newPrize">
 	<floatmenu class='pubMenu' color='#333' bgcolor='#fff' title='新建奖品' />
-	<view class="title">奖品列表</view>
+	<view class="title {{isIpx?'myIpx':''}}">奖品列表</view>
 	<ul class='newPrizeList'>
 		<li>
 			<span>

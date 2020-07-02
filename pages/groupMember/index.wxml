@@ -1,7 +1,7 @@
 <!--pages/groupMember/index.wxml-->
+<floatmenu class='pubMenu' color='#333' title='群成员'/>
 <view class="groupMember">
-	<floatmenu title='群成员'/>
-	<view class="searchBox">
+	<view class="searchBox {{isIpx?'myIpx':''}}">
 		<span>刷新</span>
 		<p class='search'>
 			<image src="../../img/search.png"></image>

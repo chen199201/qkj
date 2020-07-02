@@ -1,12 +1,12 @@
 <!--pages/groupIntegral/index.wxml-->
 <view>
-	<view class="header">
-		<floatmenu class='pubMenu' color='#fff' title='我的空间' />
+	<floatmenu class='pubMenu' color='#fff' title='我的空间' />
+	<view class="header {{isIpx?'myIpx':''}}">
 		<view class="setBtn">
 			<navigator url="../../pages/ruleSet/index">规则设置</navigator>
 			<navigator url="../../pages/prizeList/index">奖品设置</navigator>
 		</view>
-		<view class="userInfo">
+		<view class="userInfo  {{isIpx?'ls':''}}">
 			<image src="../../img/test.png"></image>
 			<span class='userName'>Herman Chambers</span>
 			<span class='groupName'>群：七七八八叨逼叨</span>
@@ -72,7 +72,7 @@
 			</ul>
 		</view>
 	</view>
-	<backbtn text='返回群中心'/>
+	<backbtn text='返回群中心' />
 	<van-overlay show="{{jflay}}" bindtap='jfClose'>
 		<view class="jfBox">
 			<view class="jfBoxInfo">

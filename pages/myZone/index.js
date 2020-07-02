@@ -15,13 +15,25 @@ Page({
       {logo:'../../img/test.png',title:'我们为不懈的努力鼓掌，但按结果付酬',time:'2016/03/31'},
       {logo:'../../img/test.png',title:'我们为不懈的努力鼓掌，但按结果付酬',time:'2016/03/31'},
       {logo:'../../img/test.png',title:'1.1×1.1×1.1×……×1.1≈3',time:'2016/03/31',isGroup:true},
+      {logo:'../../img/test.png',title:'1.1×1.1×1.1×……×1.1≈3',time:'2016/03/31',isGroup:true},
+      {logo:'../../img/test.png',title:'1.1×1.1×1.1×……×1.1≈3',time:'2016/03/31',isGroup:true},
+      {logo:'../../img/test.png',title:'1.1×1.1×1.1×……×1.1≈3',time:'2016/03/31',isGroup:true},
     ],
     routerName:'',
+    isIpx:pubFun.isIpx(),
+    bigtop:'',
   },
 
   jump(){
     wx.navigateTo({
       url: '../myZoneDetail/index'
+    })
+  },
+  onPageScroll: function(e) {
+    // 页面滚动时执行
+    let num = e.scrollTop;
+    this.setData({
+      bigtop:num
     })
   },
   /**

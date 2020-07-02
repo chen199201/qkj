@@ -1,4 +1,5 @@
 // pages/newPrize/index.js
+import pubFun from '../../utils/pubFun'
 Page({
 
   /**
@@ -7,6 +8,7 @@ Page({
   data: {
     prizeData:{name:'测试',introduce:'测试残品',pics:['http://content-sel.oss-cn-hangzhou.aliyuncs.com/Huskie/NTc1MDU3MTI4Nzg2NDlkYmE0YmZmOWNhOGZlYmJlNDU%3D.jpg'],types:[{names:'实物',val:0},{names:'虚拟',val:1}],stock:'77',integral:'88',limit:'99'},
     typeIndex:0,
+    isIpx:pubFun.isIpx(),
   },
   /**
    * 生命周期函数--监听页面加载

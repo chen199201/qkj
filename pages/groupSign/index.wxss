@@ -1,12 +1,557 @@
 /* pages/groupSign/index.wxss */
-.sgin{
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 321rpx;
+  background: linear-gradient(135deg, rgba(105, 212, 121, 1) 0%, rgba(73, 166, 92, 1) 100%);
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding-top: 127rpx;
+}
+.myIpx{
+  padding-top: 179rpx;
+}
+.sign {
+  display: flex;
+  padding: 12rpx 24rpx 30rpx 24rpx;
+  justify-content: space-between;
+}
+
+.sign p {
+  display: inline-flex;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.sign p text {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  color: rgba(255, 255, 255, .9);
+  font-size: 24rpx;
+  line-height: 34rpx;
+}
+
+.sign p text:first-child {
+  font-size: 48rpx;
+  line-height: 66rpx;
+}
+
+.signTime {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, .9);
+  text-align: center;
+  line-height: 40rpx;
+}
+
+.signDay {
+  position: relative;
+  top: 20rpx;
+  display: flex;
+  margin: 0 24rpx 0 24rpx;
+  padding: 24rpx 24rpx 18rpx 24rpx;
+  height: 212rpx;
+  box-sizing: border-box;
+  box-shadow: 0px 2rpx 4rpx 0px rgba(0, 0, 0, 0.06);
+  background: #fff;
+  border-radius: 8rpx;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+.signDay p {
+  width: 100%;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.signDay ul {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.signDay ul li {
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 80rpx;
+  height: 108rpx;
+  background: #F9F9F9;
+  border-radius: 4rpx;
+  padding: 6rpx 0 6rpx 0;
+  justify-content: center;
+  align-content: flex-start;
+}
+
+.inday {
+  background: linear-gradient(133deg, rgba(254, 185, 3, 1) 0%, rgba(254, 144, 4, 1) 100%) !important;
+  box-shadow: 0px 4rpx 8rpx 0px rgba(255, 177, 30, 0.6);
+}
+
+.inday text {
+  color: #FFFFFF !important;
+}
+
+.inday .signBtn {
+  color: #FE9D03 !important;
+  background: white !important;
+}
+
+.signDay ul li text {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+.signDay ul li .day {
+  font-size: 20rpx;
+}
+
+.signDay ul li .dayNumber {
+  font-size: 28rpx;
+  margin: 8rpx 0 10rpx 0;
+}
+
+.signDay ul li .signBtn {
+  width: 64rpx;
+  height: 24rpx;
+  background: #EEEEEE;
+  font-size: 16rpx;
+  color: #999999;
+}
+
+.signDay ul li .signLogo {
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+  bottom: 0;
+  right: 0;
+}
+
+.signRank {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 140rpx;
+  padding: 0 24rpx 0 24rpx;
+}
+
+.ranka {
+  display: inline-flex;
+  width: 100%;
+  height: 300rpx;
+}
+
+.rankMenu {
+  display: inline-flex;
+  padding: 0 44rpx 30rpx 44rpx;
+  width: 100%;
+  height: 40rpx;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  color: #999999;
+}
+.bIn{
   position: relative;
 }
-.head{
+.bIn::after{
   position: absolute;
+  width: 40rpx;
+  height: 4rpx;
+  background: #49A65C;
+  border-radius: 2rpx;
+  content: '';
+  bottom: -4rpx;
+  left: 50%;
+  margin-left: -20rpx;
+}
+
+.ranka {
+  display: inline-flex;
+  width: 100%;
+  padding: 0 48rpx 0 48rpx;
+  justify-content: space-between;
+  align-content: flex-end;
+  align-items: flex-end;
+}
+
+.ranka li {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ranka .ranka2 {
+  width: 242rpx;
+  height: 100%;
+  background: white;
+  box-shadow: 0px -20rpx 20rpx 0px rgba(89, 224, 117, 0.06);
+  border-radius: 20rpx 20rpx 0px 0px;
+  border: 2rpx solid rgba(251, 251, 251, 1);
+  box-sizing: border-box;
+  padding: 30rpx 0 38rpx 0;
+  align-content: space-between;
+}
+
+.ranka .ranka2 .mask{
+  position: relative;
+  width: 182rpx;
+  height: 154rpx;
+}
+
+.ranka .ranka2 .mask .logo {
+  position: absolute;
+  width:100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  top: 6rpx;
+  left: 40rpx;
+}
+
+.ranka .ranka2 .mask .logomask {
+  position: absolute;
+  width: 182rpx;
+  height: 154rpx;
+}
+.ranka .ranka1,
+.ranka .ranka3 {
+  width: 188rpx;
+  height: 250rpx;
+  padding: 24rpx 0 18rpx 0;
+  box-sizing: border-box;
+  align-content: space-between;
+}
+
+.ranka .ranka1 {
+  background: url('https://image.sqqmall.com/2020/07/01/3309f54778746bd1.png') no-repeat;
+  background-size: 100% 100%;
+}
+
+
+.ranka .ranka3 {
+  background: url('https://image.sqqmall.com/2020/07/01/b30cb6a7dcf4b422.png') no-repeat;
+  background-size: 100% 100%;
+}
+
+.ranka .ranka1 span,
+.ranka .ranka2 span,
+.ranka .ranka3 span {
+  display: inline-flex;
+  width: 100%;
+  font-size: 24rpx;
+  justify-content: center;
+  line-height: 34rpx;
+
+}
+
+.ranka .ranka1 .mask,
+.ranka .ranka3 .mask {
+  position: relative;
+  width: 162rpx;
+  height: 134rpx;
+}
+
+.ranka .ranka1 .mask .logo,
+.ranka .ranka3 .mask .logo {
+  position: absolute;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  top: 1rpx;
+}
+
+.ranka .ranka1 .mask .logomask,
+.ranka .ranka3 .mask .logomask {
+  position: absolute;
+  width: 162rpx;
+  height: 134rpx;
+}
+
+.ranka .ranka1 .name,
+.ranka .ranka2 .name,
+.ranka .ranka3 .name {
+  color: #333;
+
+}
+
+.ranka .ranka1 .tag,
+.ranka .ranka2 .tag,
+.ranka .ranka3 .tag {
+  color: #49A65C;
+}
+
+.rankb{
   display: flex;
   width: 100%;
-  height: 448rpx;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  background: white;
+}
+.rankb .sRank{
+  display: inline-flex;
+  width: 100%;
+  height: 80rpx;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+.rankb .sRank text{
+  position: relative;
+  display: inline-flex;
+  flex: 1;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #333;
+  background: #F8F9FA;
+}
+.rankb .sRank .sIn{
+  background: none;
+}
+.rankb .sRank >text:nth-child(1){
+  border-radius:0px 0rpx 40rpx 0;
+}
+.rankb .sRank >text:nth-child(2){
+  border-radius:0px 0rpx 40rpx 0;
+}
+.rankb .sRank .a:first-child{
+  border-radius: 0;
+}
+.rankb .sRank .sIn+text{
+  border-radius:0px 0px 0px 40rpx;
+}
+.rankb .sRank .sIn ::after{
+  position: absolute;
+  width: 40rpx;
+  height: 4rpx;
+  background: #49A65C;
+  border-radius: 2rpx;
+  content: '';
+  bottom: 0;
+  left: 50%;
+  margin-left: -20rpx;
+}
+
+.sRankList{
+  display: flex;
+  width: 100%;
+  padding: 0 24rpx 0 24rpx;
+}
+
+.sRankList ul{
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 100rpx;
+}
+.sRankList ul li{
+  display: inline-flex;
+  width: 100%;
+  height: 88rpx;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+
+.sRankList ul li span{
+  display: inline-flex;
+  align-items: center;
+}
+
+.sRankList ul li span image{
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  margin: 0 20rpx 0 38rpx;
+}
+
+.sRankList ul li span i{
+  font-size: 36rpx;
+  color: #999;
+}
+.sRankList ul li span text{
+  font-size: 32rpx;
+  color: #333;
+}
+.sRankList ul li span:last-child{
+  justify-content: flex-end;
+  color: #666666;
+  font-size: 26rpx;
+}
+
+.jfBox {
+  display: flex;
+  height: 100%;
+  padding: 240rpx 84rpx 0 84rpx;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.jfBox .jfBoxInfo {
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+  height: 794rpx;
+  background: white;
+  border-radius: 8rpx;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 24rpx 20rpx 40rpx 20rpx;
+  box-sizing: border-box;
+  align-content: space-between;
+}
+
+.closeImg {
+  position: absolute;
+  width: 48rpx;
+  height: 48rpx;
+  right: -50rpx;
+  top: -74rpx;
+}
+
+
+.bgBox{
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 544rpx;
+  height: 602rpx;
+  padding-bottom: 24rpx;
+  box-sizing: border-box;
+}
+
+.bgBox .bgs {
+  position: absolute;
+  width: 544rpx;
+  height: 602rpx;
+  border-radius: 8rpx;
+}
+
+.bgBox .textBox{
+  display: inline-flex;
+  width: 100%;
+  padding: 32rpx 24rpx 0 24rpx;
+  z-index: 1;
+  color: rgba(255, 255, 255, .9);
+  box-sizing: border-box;
+  flex-wrap: wrap;
+
+}
+
+.bgBox .textBox i{
+  width: 100%;
+  font-size: 80rpx;
+  line-height: 96rpx;
+}
+.bgBox .textBox u{
+  margin-top: 4rpx;
+  font-size: 28rpx;
+  line-height: 34rpx;
+}
+
+.bgBox .contentBox{
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+  color: rgba(255, 255, 255, .9);
+  z-index: 1;
+  padding: 62rpx 24rpx 0 24rpx;
+  font-size: 32rpx;
+}
+.bgBox .contentBox text:first-child{
+  line-height: 44rpx;
+  text-indent: 64rpx;
+}
+.bgBox .contentBox text:last-child{
+  width: 100%;
+  text-align: right;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, .8);
+  margin-top: 10rpx;
+}
+
+
+.bgBox .place{
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+  color: rgba(255, 255, 255, .8);
+  z-index: 1;
+  padding: 78rpx 24rpx 0 24rpx;
+  font-size: 22rpx;
+}
+.bgBox .place text{
+  width: 100%;
+  line-height: 32rpx;
+}
+
+.infoBox{
+  display: inline-flex;
+  width: 100%;
+  height: 84rpx;
+  justify-content: space-between;
+}
+.infoBox span{
+  display: inline-flex;
+}
+.infoBox span .pic{
+  width: 84rpx;
+  height: 84rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+  border: 4rpx solid #49A65C;
+  box-sizing: border-box;
+}
+.infoBox span .qrcode{
+  width: 80rpx;
+  height: 80rpx;
+  border: 4rpx solid #49A65C;
+  box-sizing: border-box;
+  border-radius: 4rpx;
+}
+.infoBox span i{
+  display: inline-flex;
+  width: 260rpx;
+  flex-wrap: wrap;
+  
+}
+.infoBox span i u{
+  width: 100%;
+  font-size: 32rpx;
+  color: #333;
+}
+.infoBox span i em{
+  font-size: 24rpx;
+  color: #999999;
+}
+.infoBox span i b{
+  font-size: 28rpx;
+  color: #49A65C;
+}
+
+.deposit{
+  display: inline-flex;
+  width: 100%;
+  margin-top: 72rpx;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.deposit button{
+  width: 100%;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 32rpx;
+  color: #fff;
   background:linear-gradient(135deg,rgba(105,212,121,1) 0%,rgba(73,166,92,1) 100%);
-  top: 0;
+  border-radius:40rpx;
+}
+.deposit p{
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, .8);
+  margin-top: 20rpx;
 }

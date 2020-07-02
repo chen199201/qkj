@@ -3,7 +3,7 @@
 <view class="lanuch">
 	<floatmenu class='pubMenu' color='#333' title='新增抽奖' bgcolor='#fff' />
 	<block>
-		<view class="timeset">
+		<view class="timeset {{isIpx?'myIpx':''}}">
 			<text class="timetit">时间设置</text>
 			<ul>
 				<li>
@@ -17,9 +17,9 @@
 					<span>开始时间</span>
 					<span>
 						<view class="tui-picker-content setR">
-							<view bindtap="openTimeFun" class="timeData">{{openTime}}</view>
-							<van-popup show="{{ openOver }}" position="bottom" bindtap="onClose">
-								<van-datetime-picker type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}" bind:confirm="onInput" />
+							<view bindtap="openTimeFun" data-text='open'  class="timeData">{{openTime}}</view>
+							<van-popup show="{{ openShow }}" position="bottom" data-text='open' bind:close="onClose">
+								<van-datetime-picker type="datetime" data-text='open'  value="{{ currentDate }}" min-date="{{ minDate }}" bind:confirm="onInput" />
 							</van-popup>
 						</view>
 					</span>
@@ -28,9 +28,9 @@
 					<span>结束时间</span>
 					<span>
 						<view class="tui-picker-content setR">
-							<view bindtap="openTimeFun" class="timeData">{{openTime}}</view>
-							<van-popup show="{{ openOver }}" position="bottom" bindtap="onClose">
-								<van-datetime-picker type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}" bind:confirm="onInput" />
+							<view bindtap="openTimeFun" data-text='end'  class="timeData">{{overTime}}</view>
+							<van-popup show="{{ overShow }}" data-text='end' position="bottom" bind:close="onClose">
+								<van-datetime-picker type="datetime" data-text='end' value="{{ currentDate }}" min-date="{{ minDate }}" bind:confirm="onInput" />
 							</van-popup>
 						</view>
 					</span>
@@ -92,7 +92,7 @@
 				</dl>
 			</li>
 		</ul>
-		
+
 		<button class="addBtn" bindtap="addData" wx:if='{{defalutArr.length<10}}'>
 			<image src="img/4.png"></image> 添加奖项
 		</button>
@@ -104,24 +104,24 @@
 			<li>
 				<text>每人每天最多抽奖次数</text>
 				<view class="sInput">
-					<input type="number" value="{{timeSetData.numbers}}" placeholder="" style="width:100rpx"/>次
+					<input type="number" value="{{timeSetData.numbers}}" placeholder="" style="width:100rpx" />次
 				</view>
 			</li>
 			<li>
 				<text>参与本次抽奖需消耗积分</text>
 				<view class="sInput">
 					<input type="number" value="{{timeSetData.consume.number}}" placeholder="" style="width:100rpx" />分
-					<van-switch checked="{{timeSetData.consume.check}}" active-color="#49A65C" size="44rpx" bind:change="onChange" style="margin-left:12rpx"/>
+					<van-switch checked="{{timeSetData.consume.check}}" active-color="#49A65C" size="44rpx" bind:change="onChange" style="margin-left:12rpx" />
 				</view>
 			</li>
 			<li>
 				<text>开启奖品兑换有效期</text>
 				<view class="sInput">
-					<view bindtap="openTimeFun" class="timeData">{{timeSetData.prizeTime.time}}</view>
-					<van-popup show="{{ openOver }}" position="bottom" bindtap="onClose">
-						<van-datetime-picker type="datetime" value="{{ currentDate }}" min-date="{{ minDate }}" bind:confirm="onInput" />
+					<view bindtap="openTimeFun"  data-text='kj'  class="timeData">{{kjTime}}</view>
+					<van-popup show="{{ kjShow }}" data-text='kj'  position="bottom" bind:close="onClose">
+						<van-datetime-picker type="datetime"  data-text='kj'  value="{{ currentDate }}" min-date="{{ minDate }}" bind:confirm="onInput" />
 					</van-popup>
-					<van-switch checked="{{timeSetData.prizeTime.check}}" active-color="#49A65C" size="44rpx" bind:change="onChange"  style="margin-left:12rpx"/>
+					<van-switch checked="{{timeSetData.prizeTime.check}}" active-color="#49A65C" size="44rpx" bind:change="onChange" style="margin-left:12rpx" />
 				</view>
 			</li>
 		</ul>

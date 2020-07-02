@@ -11,7 +11,9 @@ Page({
       {logo:'../../img/test.png',name:'Greer',identity:1,groupName:'Mable','jionTime':'1982/09/11'},
       {logo:'../../img/test.png',name:'Georgie Sc',identity:1,groupName:'Miller','jionTime':'2004/02/07'},
       {logo:'../../img/test.png',name:'Bruce',identity:3,groupName:'Lettie Adki','jionTime':'1984/11/11'},
-    ]
+    ],
+    isIpx:pubFun.isIpx(),
+
   },
 
 

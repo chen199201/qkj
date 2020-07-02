@@ -18,6 +18,8 @@
   box-sizing: border-box;
 }
 
+
+
 .headB span {
   display: inline-flex;
   flex: 1;
@@ -51,6 +53,11 @@
   display: flex;
   padding: 0 24rpx 0 24rpx;
   flex-wrap: wrap;
+  margin-top: 127rpx;
+}
+
+.myIpx{
+  margin-top: 179rpx;
 }
 
 .groupT p {

@@ -14,8 +14,11 @@
   font-size: 32rpx;
   color: #333;
   text-indent: 24rpx;
+  margin-top: 127rpx;
 }
-
+.myIpx{
+  margin-top: 179rpx;
+}
 .newPrizeList {
   display: flex;
   margin: 0 24rpx 0 24rpx;

@@ -1,11 +1,12 @@
 // pages/exchangeInfo/index.js
+import pubFun from '../../utils/pubFun'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    isIpx:pubFun.isIpx(),
   },
 
   /**

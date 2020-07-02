@@ -9,15 +9,41 @@ Page({
     // 默认奖品数据
     defalutArr: [],
     // 奖品数据
-    prizeTypeArr: [{ "type": 0, "name": "123", "img": [], "num": '100', "sortNo": '',"probability":'89%',"checked":true }],
+    prizeTypeArr: [{
+      "type": 0,
+      "name": "123",
+      "img": [],
+      "num": '100',
+      "sortNo": '',
+      "probability": '89%',
+      "checked": true
+    }],
 
     //添加一个奖项
-    addPrizeTypeArr: [{ "type": 0, "name": "", "img": [], "num": '', "sortNo": '',"probability":'',"checked":false }],
+    addPrizeTypeArr: [{
+      "type": 0,
+      "name": "",
+      "img": [],
+      "num": '',
+      "sortNo": '',
+      "probability": '',
+      "checked": false
+    }],
     //奖品类型选择
-    optionArr:[
-      {a: '实物',val: 0,isShow:true,}, {a: '虚拟',val: 1,isShow:false}, {a: '积分',val: 2,isShow:false}
-    ],
-    smVal:'',//抽奖说明
+    optionArr: [{
+      a: '实物',
+      val: 0,
+      isShow: true,
+    }, {
+      a: '虚拟',
+      val: 1,
+      isShow: false
+    }, {
+      a: '积分',
+      val: 2,
+      isShow: false
+    }],
+    smVal: '', //抽奖说明
     // 开奖方式
     items: [{
         name: 0,
@@ -29,42 +55,51 @@ Page({
         checked: 'true'
       },
     ],
-    
+
     // 奖品类型选择参数
     num: 0,
     // 图片上传
-    pics: ['http://content-sel.oss-cn-hangzhou.aliyuncs.com/Huskie/NTc1MDU3MTI4Nzg2NDlkYmE0YmZmOWNhOGZlYmJlNDU%3D.jpg' ], //图片
+    pics: ['http://content-sel.oss-cn-hangzhou.aliyuncs.com/Huskie/NTc1MDU3MTI4Nzg2NDlkYmE0YmZmOWNhOGZlYmJlNDU%3D.jpg'], //图片
 
     // vant时间参数
     minHour: 0,
     maxHour: 24,
     minDate: new Date().getTime(),
-    currentDate: new Date().getTime()+86400000,
-    openTime: pubFun.formatDuring((new Date()).getTime()+86400000), //开奖时间
+    currentDate: new Date().getTime() + 86400000,
+
+    openTime: pubFun.formatDuring((new Date()).getTime() + 86400000), //开奖时间
+    overTime: pubFun.formatDuring((new Date()).getTime() + 86400000), //结束时间
+    kjTime: pubFun.formatDuring((new Date()).getTime() + 86400000), //开奖时间
+
     openOver: false, //时间选择弹窗
 
-    timeSetData:{
-      numbers:'0',
-      consume:{
-        number:'90',
-        check:true,
-      },
-      prizeTime:{
-        time:pubFun.formatDuring((new Date()).getTime()),
-        check:false,
-      },
-    }
+    openShow: false, //开始时间弹窗
+    overShow: false, //结束时间
+    kjShow: false, //开奖时间
 
+
+    timeSetData: {
+      numbers: '0',
+      consume: {
+        number: '90',
+        check: true,
+      },
+      prizeTime: {
+        time: pubFun.formatDuring((new Date()).getTime()),
+        check: false,
+      },
+    },
+    isIpx: pubFun.isIpx(),
 
   },
   //获取抽奖说明内容
-  getTextArea(e){
+  getTextArea(e) {
     this.setData({
-      smVal:e.detail.value
+      smVal: e.detail.value
     })
   },
   // 上传图片
-  updata(e){
+  updata(e) {
     let index = e.currentTarget.dataset.imgindex;
     let defalutArr = this.data.defalutArr;
     let that = this;
@@ -72,13 +107,13 @@ Page({
       count: 1,
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
-      success (res) {
+      success(res) {
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths;
         defalutArr[index].img = tempFilePaths;
         console.log(tempFilePaths)
         that.setData({
-          defalutArr:defalutArr
+          defalutArr: defalutArr
         })
       }
     })
@@ -86,7 +121,7 @@ Page({
   //图片预览
   imgYu(e) {
     let url = e.currentTarget.dataset.url;
-    if(typeof url=='object'){
+    if (typeof url == 'object') {
       url = url[0];
     }
     let arr = [];
@@ -99,37 +134,98 @@ Page({
 
 
   //积分选择
-  jsChange(e){
+  jsChange(e) {
     let setJfData = this.data.setJfData;
     let isCheck = e.currentTarget.dataset.jfdata.isCheck;
     let idx = e.currentTarget.dataset.idx;
     let index = e.currentTarget.dataset.index
-     console.log(setJfData[idx].options[index])
-    if(!isCheck){
-      
+    console.log(setJfData[idx].options[index])
+    if (!isCheck) {
+
     }
   },
 
   // 选择时间弹窗
-  openTimeFun() {
-    this.setData({
-      openOver: true
-    })
+  openTimeFun(e) {
+    let text = e.currentTarget.dataset.text;
+    switch (text) {
+      case 'open':
+        this.setData({
+          openShow: true
+        })
+        break;
+      case 'end':
+        this.setData({
+          overShow: true
+        })
+        break;
+      case 'kj':
+        this.setData({
+          kjShow: true
+        })
+        break;
+    }
+    console.log(e.currentTarget.dataset.text)
+    // this.setData({
+    //   openShow: true
+    // })
   },
   //确认开奖时间
-  onInput(event) {
-    console.log()
-    let openTime = pubFun.formatDuring(event.detail)
-    this.setData({
-      openTime: openTime,
-      openOver: false
-    })
-    console.log(openTime)
+  onInput(e) {
+    let text = e.currentTarget.dataset.text;
+    let time = pubFun.formatDuring(e.detail);
+    let openTime = this.data.openTime;
+    let overTime = this.data.overTime;
+    let kjTime = this.data.kjTime;
+    console.log(e)
+    switch (text) {
+      case 'open':
+        openTime = time;
+        this.setData({
+          openTime: openTime,
+          openShow: false
+        })
+        break;
+      case 'end':
+        overTime = time;
+        this.setData({
+          overTime: overTime,
+          overShow: false,
+        })
+        break;
+      case 'kj':
+        kjTime = time;
+        this.setData({
+          kjTime: kjTime,
+          kjShow: false
+        })
+        break;
+    }
   },
   // 关闭时间选择弹窗
-  onClose() {
+  onClose(e) {
+    let text = e.currentTarget.dataset.text;
+    switch (text) {
+      case 'open':
+        this.setData({
+          openShow: false
+        })
+        break;
+      case 'end':
+        this.setData({
+          overShow: false
+        })
+        break;
+      case 'kj':
+        this.setData({
+          kjShow: false
+        })
+        break;
+    }
+
+
     this.setData({
-      openOver: false
+      openShow: false
     })
   },
   /**
@@ -138,18 +234,18 @@ Page({
   onLoad: function (options) {
     console.log(pubFun)
   },
-  alert(e){
+  alert(e) {
     console.log(e.currentTarget.dataset.index)
   },
   //选择奖品类型
   getType(e) {
     let defalutArr = this.data.defalutArr;
-    let idx = e.currentTarget.dataset.idx;  //外层数组下标
+    let idx = e.currentTarget.dataset.idx; //外层数组下标
     let opindex = e.currentTarget.dataset.opindex;
     defalutArr[idx].type = opindex;
-      this.setData({
-        defalutArr:defalutArr,
-      })
+    this.setData({
+      defalutArr: defalutArr,
+    })
   },
   setWay() {
     wx.navigateTo({
@@ -160,32 +256,32 @@ Page({
   // 添加奖项
   addData() {
     let a = pubFun.obj(this.data.defalutArr.concat(this.data.addPrizeTypeArr));
-    a.forEach((item,index)=>{
-      item.sortNo = index+1;
+    a.forEach((item, index) => {
+      item.sortNo = index + 1;
     })
     let newArr = a;
     this.setData({
       defalutArr: newArr
     })
   },
-  getVal(e){
+  getVal(e) {
     let val = e.detail.value;
     let defalutArr = this.data.defalutArr;
-    let idx = e.currentTarget.dataset.idx;  //外层数组下标
+    let idx = e.currentTarget.dataset.idx; //外层数组下标
     let nameval = e.currentTarget.dataset.nameval;
-    if(nameval==0){
+    if (nameval == 0) {
       defalutArr[idx].name = val;
-    }else if(nameval==1){
+    } else if (nameval == 1) {
       defalutArr[idx].num = val;
-    }else{
+    } else {
       defalutArr[idx].lotteryAwardCodeList = val;
       console.log(defalutArr[idx].lotteryAwardCodeList)
     }
     this.setData({
-      defalutArr:defalutArr,
+      defalutArr: defalutArr,
     })
   },
-  goCj(){
+  goCj() {
     console.log(this.data.defalutArr)
   },
   // 删除奖项
@@ -205,13 +301,13 @@ Page({
         openNum: index,
       })
     };
-    if(index==0){
+    if (index == 0) {
       this.setData({
-        isTime:false
+        isTime: false
       })
-    }else{
+    } else {
       this.setData({
-        isTime:true
+        isTime: true
       })
     }
   },
@@ -333,7 +429,7 @@ Page({
   //上传图片开始
   chooseImg: function (e) {
     var that = this;
-    let idx =  e.currentTarget.dataset.idx;
+    let idx = e.currentTarget.dataset.idx;
     let defalutArr = this.data.defalutArr;
     if (defalutArr[idx].img.length < 3) {
       wx.chooseImage({
@@ -363,7 +459,7 @@ Page({
   // 删除图片
   deleteImg: function (e) {
     let index = e.currentTarget.dataset.index;
-    let idx =  e.currentTarget.dataset.idx;
+    let idx = e.currentTarget.dataset.idx;
     let defalutArr = this.data.defalutArr;
     defalutArr[idx].img.splice(index, 1);
     this.setData({
@@ -389,8 +485,8 @@ Page({
    */
   onReady: function () {
     let newArr = this.data.defalutArr.concat(this.data.prizeTypeArr);
-    newArr.forEach((item,index)=>{
-      item.sortNo = index+1;
+    newArr.forEach((item, index) => {
+      item.sortNo = index + 1;
     })
     this.setData({
       defalutArr: newArr

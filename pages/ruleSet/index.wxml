@@ -2,7 +2,7 @@
 <view class="ruleSet">
 	<floatmenu class='pubMenu' color='#333' bgcolor='#fff' title='规则设置' />
 	<view class="ruleBox">
-		<view class="jfSet">
+		<view class="jfSet {{isIpx?'myIpx':''}}">
 			<i>当前群已开启群积分</i>
 			<van-switch checked="{{openIntegral}}" active-color="#49A65C" size="44rpx" bind:change="onChange" />
 		</view>

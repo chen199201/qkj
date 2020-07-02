@@ -23,6 +23,8 @@ Page({
       {logo:'img/14.png',name:'返回空间'},
     ],
     show:false,
+    bigtop:'',  //高度大于100时控制顶部title背景色
+    isIpx:pubFun.isIpx(),
   },
 
   /**
@@ -39,13 +41,21 @@ Page({
       show:show
     })
   },
+  onPageScroll: function(e) {
+    // 页面滚动时执行
+    let num = e.scrollTop;
+    this.setData({
+      bigtop:num
+    })
+  },
   onLoad: function (options) {
     this.setData({
       routerName:pubFun.getCurrentPageUrl()
     })
+    
     console.log(this.data.routerName)
   },
-
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

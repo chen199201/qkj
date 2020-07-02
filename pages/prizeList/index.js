@@ -1,4 +1,5 @@
 // pages/prizeList/index.js
+import pubFun from '../../utils/pubFun'
 Page({
 
   /**
@@ -46,6 +47,7 @@ Page({
         stock: '80'
       },
     ],
+    isIpx:pubFun.isIpx(),
   },
   //状态切换
   onChange(e) {

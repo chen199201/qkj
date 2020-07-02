@@ -1,4 +1,5 @@
 // pages/groupLuckDraw/index.js
+import pubFun from '../../utils/pubFun'
 Page({
 
   /**
@@ -48,8 +49,18 @@ Page({
         tys: '3'
       },
     ],
+    bigtop:'',  //高度大于100时控制顶部title背景色
+    isIpx:pubFun.isIpx(),
   },
 
+
+  onPageScroll: function(e) {
+    // 页面滚动时执行
+    let num = e.scrollTop;
+    this.setData({
+      bigtop:num
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

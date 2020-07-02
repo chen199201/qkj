@@ -1,7 +1,7 @@
 <!--pages/prizeList/index.wxml-->
 <floatmenu class='pubMenu' color='#333' bgcolor='#fff' title='奖品列表' />
 <view class="prizeList">
-	<view class="explain">
+	<view class="explain {{isIpx?'myIpx':''}}">
 		*添加群积分奖品后，可自定义兑换奖品，群成员可消耗个人积分进行兑换
 	</view>
 	<view class="title">奖品列表（89）</view>

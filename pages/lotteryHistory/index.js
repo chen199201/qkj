@@ -1,4 +1,5 @@
 // pages/history/index.js
+import pubFun from '../../utils/pubFun'
 Page({
 
   /**
@@ -12,6 +13,7 @@ Page({
       {types:'已完成',title:'哇哦9毛红包',number:'8989',time:'2020/08/09-2020/09/08',timeInterval:'08:09–18:19',tys:'3'},
       {types:'待开始',title:'哇哦9毛红包',number:'8989',time:'2020/08/09-2020/09/08',tys:'1'},
     ],
+    isIpx:pubFun.isIpx(),
   },
 
 

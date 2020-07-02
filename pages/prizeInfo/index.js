@@ -16,6 +16,7 @@ Page({
     tabBar:[
     ],
     routerName:'',
+    isIpx:pubFun.isIpx(),
   },
 
   /**

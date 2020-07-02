@@ -13,8 +13,11 @@
   width: 100%;
   padding: 0 24rpx 0 24rpx;
   flex-wrap: wrap;
+  margin-top: 127rpx;
 }
-
+.myIpx{
+  margin-top: 179rpx;
+}
 .timetit{
   width: 100%;
   height: 90rpx;

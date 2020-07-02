@@ -13,6 +13,29 @@ const pubFun = {
     var minutes = time.getMinutes();
     return year + '/' + this.add0(month) + '/' + this.add0(date) + ' ' + this.add0(hours) + ':' + this.add0(minutes);
   },
+
+  // 时间转换，保留到天
+  formatDuringDay(timestamp) {
+    var time = new Date(timestamp);
+    var year = time.getFullYear();
+    var month = time.getMonth() + 1;
+    var date = time.getDate();
+    var hours = time.getHours();
+    var minutes = time.getMinutes();
+    return year + '/' + this.add0(month) + '/' + this.add0(date);
+  },
+
+  // 时间转换，保留到天
+  formatDuringHours(timestamp) {
+    var time = new Date(timestamp);
+    var year = time.getFullYear();
+    var month = time.getMonth() + 1;
+    var date = time.getDate();
+    var hours = time.getHours();
+    var minutes = time.getMinutes();
+    return this.add0(hours) + ':' + this.add0(minutes);
+  },
+
   // 深拷贝
   obj(obj) {
     let tmp = JSON.stringify(obj);
@@ -49,6 +72,15 @@ const pubFun = {
     wx.navigateTo({
       url: '../../pages/myZone/index',
     })
+  },
+  //是否为苹果X
+  isIpx(){
+    let a = wx.getSystemInfoSync();
+    if(a.model.substring(0,8)=='iPhone X'){
+      return true
+    }else{
+      return false
+    }
   },
 }
 export default pubFun

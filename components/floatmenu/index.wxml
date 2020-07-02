@@ -1,7 +1,7 @@
 <!--components/floatmenu/index.wxml-->
-<view class="menus" style="background:{{bgcolor}}">
+<view class="menus {{bigtop>10?'bigone':''}} {{isIPhoneX?'ipx':''}}" style="background:{{bgcolor}}">
 	<p class='title'>
-		<view class="leftTab">
+		<view class="leftTab" wx:if='{{leftshow}}'>
 			<span bindtap='backUp'>
 				<image src="img/1.png"></image>
 				<i></i>

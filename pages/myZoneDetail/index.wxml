@@ -1,14 +1,14 @@
 <!--pages/myZoneDetail/index.wxml-->
+<floatmenu class='pubMenu' color='#fff' title='我的空间'  bigtop="{{bigtop}}"/>
 <view class="myZone">
 	<view class="header">
-		<floatmenu class='pubMenu' color='#fff'  title='我的空间'/>
-		<view class="groupInfo">
-			<p>
+		<view class="groupInfo {{isIpx?'myIpx':''}}">
+			<p class="">
 				<span>
 					<image></image>
 				</span>
 				<span>
-					<u>分享是学习他姥姥(我是群名)</u>
+					<u>分享是学习他姥姥(我是群名) </u>
 					<u>
 						<i>群主:Sign.89</i>
 						<i>群成员:89<image src="img/4.png"></image></i>
@@ -36,7 +36,7 @@
 	</view>
 	<view class="nav">
 		<p class='navTit'>最新活动</p>
-		<view class="listData"  wx:for='{{activityData}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+		<view class="listData" wx:for='{{activityData}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
 			<p>
 				<span>
 					<i>
@@ -52,7 +52,7 @@
 			<p>
 				<span>
 					<i>
-						<image class="userLogo" src="{{items}}" wx:for='{{item.imgData}}' wx:for-item='items' wx:for-index = 'idx' wx:key='idx'></image>
+						<image class="userLogo" src="{{items}}" wx:for='{{item.imgData}}' wx:for-item='items' wx:for-index='idx' wx:key='idx'></image>
 						<text>等{{item.people}}个成员未参与</text>
 					</i>
 					<i>去提醒</i>
@@ -60,4 +60,5 @@
 			</p>
 		</view>
 	</view>
+	<tabbar routername='{{routerName}}'/>
 </view>

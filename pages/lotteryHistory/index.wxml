@@ -1,7 +1,7 @@
 <!--pages/history/index.wxml-->
 <view class="luckDraw">
 	<floatmenu class='pubMenu' color='#333' title='历史记录' bgcolor='#fff' />
-	<view class="groupT">
+	<view class="groupT {{isIpx?'myIpx':''}}">
 		<p>历史抽奖</p>
     <ul>
       <li wx:for='{{luckData}}'  wx:for-item='item' wx:key='index' wx:for-index='index'>

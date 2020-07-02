@@ -23,6 +23,7 @@ Page({
     currentDate: new Date().getTime() + 86400000,
     minDate: new Date().getTime(),
     openTime: pubFun.formatDuring((new Date()).getTime() + 86400000), //开奖时间
+    isIpx:pubFun.isIpx(),
   },
 
   /**
