@@ -1,0 +1,238 @@
+/* pages/signDetails/index.wxss */
+.header {
+  position: relative;
+  width: 100%;
+  height: 406rpx;
+  background:#63CC73;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding-top: 170rpx;
+}
+
+.myIpx{
+  padding-top: 201rpx;
+}
+
+
+.signTime {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, .9);
+  text-align: center;
+  line-height: 40rpx;
+}
+
+
+
+
+.signRank {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30rpx;
+}
+
+.ranka {
+  display: inline-flex;
+  width: 100%;
+  height: 300rpx;
+}
+
+
+.ranka {
+  display: inline-flex;
+  width: 100%;
+  padding: 0 72rpx 0 72rpx;
+  justify-content: space-between;
+  align-content: flex-end;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+
+.ranka li {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ranka .ranka2 {
+  width: 242rpx;
+  height: 100%;
+  background: white;
+  box-shadow: 0px -20rpx 20rpx 0px rgba(89, 224, 117, 0.06);
+  border-radius: 20rpx 20rpx 0px 0px;
+  border: 2rpx solid rgba(251, 251, 251, 1);
+  box-sizing: border-box;
+  padding: 30rpx 0 30rpx 0;
+  align-content: space-between;
+}
+
+.ranka .ranka2 .mask {
+  position: relative;
+  width: 182rpx;
+  height: 154rpx;
+}
+
+.ranka .ranka2 .mask .logo {
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  top: 6rpx;
+  left: 40rpx;
+}
+
+.ranka .ranka2 .mask .logomask {
+  position: absolute;
+  width: 182rpx;
+  height: 154rpx;
+}
+
+.ranka .ranka1,
+.ranka .ranka3 {
+  position: relative;
+  width: 188rpx;
+  height: 250rpx;
+  padding: 24rpx 0 0 0;
+  box-sizing: border-box;
+  align-content: space-between;
+  background: white;
+  box-shadow: 0px 0px 8px 0px rgba(73, 166, 92, 0.12);
+  border-radius: 20rpx 20rpx 0px 0px;
+  border: 2px solid rgba(251, 251, 251, 1);
+}
+
+.ranka .ranka1::before{
+  display: inline-block;
+  position: absolute;
+  width: 20rpx;
+  height: 20rpx;
+  content: '';
+  background: url('https://image.sqqmall.com/2020/07/02/2d4c6b860f6c9089.png')  no-repeat;
+  background-size: 20rpx 20rpx;
+  left: 12rpx;
+  top: 8rpx;
+}
+
+
+.ranka .ranka3 {
+  height: 242rpx;
+  /* background: url('https://image.sqqmall.com/2020/07/01/b30cb6a7dcf4b422.png')  no-repeat;
+  background-size:cover; */
+}
+
+.ranka .ranka3::after{
+  display: inline-block;
+  position: absolute;
+  width: 20rpx;
+  height: 20rpx;
+  content: '';
+  background: url('https://image.sqqmall.com/2020/07/02/39cd94da0bdcaf72.png')  no-repeat;
+  background-size: 20rpx 20rpx;
+  right: 12rpx;
+  top: 8rpx;
+}
+
+
+.ranka .ranka1 span,
+.ranka .ranka2 span,
+.ranka .ranka3 span {
+  display: inline-flex;
+  width: 100%;
+  font-size: 24rpx;
+  justify-content: center;
+  line-height: 34rpx;
+  box-sizing: border-box;
+
+}
+
+.ranka .ranka1 .mask,
+.ranka .ranka3 .mask {
+  position: relative;
+  width: 162rpx;
+  height: 134rpx;
+}
+
+.ranka .ranka1 .mask .logo,
+.ranka .ranka3 .mask .logo {
+  position: absolute;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  top: 1rpx;
+}
+
+.ranka .ranka1 .mask .logomask,
+.ranka .ranka3 .mask .logomask {
+  position: absolute;
+  width: 162rpx;
+  height: 134rpx;
+}
+
+.ranka .ranka1 .name,
+.ranka .ranka2 .name,
+.ranka .ranka3 .name {
+  color: #333;
+
+}
+
+.ranka .ranka1 .tag,
+.ranka .ranka2 .tag,
+.ranka .ranka3 .tag {
+  color: #49A65C;
+}
+
+.rankb {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  background: white;
+}
+
+.sRankList {
+  display: flex;
+  width: 100%;
+  padding: 40rpx 24rpx 0 24rpx;
+}
+
+.sRankList ul {
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.sRankList ul li {
+  display: inline-flex;
+  width: 100%;
+  height: 88rpx;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+
+.sRankList ul li span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.sRankList ul li span image {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  margin: 0 20rpx 0 38rpx;
+}
+
+.sRankList ul li span i {
+  font-size: 36rpx;
+  color: #999;
+  width: 50rpx;
+}
+
+.sRankList ul li span text {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.sRankList ul li span:last-child {
+  justify-content: flex-end;
+  color: #666666;
+  font-size: 26rpx;
+}

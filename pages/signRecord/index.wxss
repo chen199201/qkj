@@ -1,0 +1,186 @@
+/* pages/signRecord/index.wxss */
+.signRecord {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #F6F6F6;
+  overflow-y: scroll;
+}
+
+
+.signRecordT {
+  display: flex;
+  padding: 0 24rpx 0 24rpx;
+  flex-wrap: wrap;
+  margin-top: 127rpx;
+}
+.myIpx{
+  margin-top: 179rpx;
+}
+.signRecordT p {
+  width: 100%;
+  height: 94rpx;
+  line-height: 94rpx;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.signRecordT ul {
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+  background: white;
+  box-shadow: 0px 2rpx 4rpx 0px rgba(0, 0, 0, 0.06);
+  border-radius: 8rpx;
+  margin-bottom: 120rpx;
+
+
+}
+
+.signRecordT ul li {
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding:0 0 30rpx 24rpx;
+  border-bottom: 2rpx solid #F1F1F1;
+  margin-bottom: 14rpx;
+}
+.signRecordT ul li:last-child{
+  margin-bottom: 0;
+  border-bottom: none;
+}
+.signRecordT ul li span {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.signRecordT ul li .a{
+  background:linear-gradient(135deg,rgba(105,212,121,.3) 0%,rgba(73,166,92,.3) 100%);
+}
+.signRecordT ul li .a text{
+  color:#49A65C;
+}
+.signRecordT ul li .b{
+  background:linear-gradient(133deg,rgba(255,225,128,.3) 0%,rgba(255,192,73,.3) 100%);
+}
+.signRecordT ul li .b text{
+  color:#FFBF46;
+}
+.signRecordT ul li .c{
+  background:linear-gradient(135deg,rgba(245,126,142,.3) 0%,rgba(232,72,85,.3) 100%);
+}
+.signRecordT ul li .c text{
+  color:#E84855;
+}
+.signRecordT ul li .d{
+  background:rgba(51,51,51,0.1);
+}
+.signRecordT ul li .d text{
+  color:#333;
+}
+
+.signRecordT ul li span:first-child {
+  width: 76rpx;
+  height: 40rpx;
+  border-radius: 8rpx;
+  color: #333333;
+  font-size: 20rpx;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12rpx;
+  margin-top: 24rpx;
+}
+.signRecordT ul li span:last-child{
+  flex: 1;
+  align-content: space-between;
+}
+.signRecordT ul li span:last-child view{
+  width: 100%;
+}
+.signRecordT ul li span:last-child .title{
+  display: inline-flex;
+  align-items: center;
+  font-size: 32rpx;
+  color: #333;
+  height: 86rpx;
+  border-bottom: 2rpx solid #F1F1F1;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+.signRecordT ul li span:last-child .bf{
+  color: #333333;
+  margin-left: 20rpx;
+}
+.signRecordT ul li span:last-child .number,.signRecordT ul li span:last-child .time{
+  font-size: 24rpx;
+  color: #999;
+}
+.signRecordT ul li span:last-child .number{
+  margin-bottom: 20rpx;
+}
+.signRecordT ul li span:last-child .time{
+  margin-bottom: 20rpx;
+}
+.signRecordT ul li span:last-child .btn{
+  display: inline-flex;
+  width: 100%;
+  height: 50rpx;
+  font-size: 28rpx;
+  justify-content: flex-end;
+  margin-right: 24rpx;
+  margin-top: 26rpx;
+}
+.signRecordT ul li span:last-child .btn i{
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 24rpx 0 24rpx;
+  border: 2rpx solid #999999;
+  border-radius: 30rpx;
+  box-sizing: border-box;
+  margin-left: 20rpx;
+  color: #666666;
+}
+
+.signRecordT ul li span:last-child .btn i:first-child{
+  border-color: #49A65C;
+  color: #49A65C;
+}
+.signRecordT ul li span:last-child .btn i:nth-child(2){
+  border-color: #FFBF46;
+  color: #FFBF46;
+}
+.backBtn{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 98rpx;
+  background: white;
+  z-index: 1;
+  box-shadow:0px -2px 8px 0px rgba(0,0,0,0.06);
+  padding: 0 24rpx 0 24rpx;
+  box-sizing: border-box;
+
+}
+.backBtn navigator{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: white;
+  font-weight: normal;
+}
+.backBtn navigator:first-child{
+  border-radius:44rpx 0px 0px 44rpx;
+  background: #FFBF46;
+}
+.backBtn navigator:last-child{
+  border-top-right-radius: 44rpx;
+  border-bottom-right-radius: 44rpx;
+  background: #49A65C;
+}

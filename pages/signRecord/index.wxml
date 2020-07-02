@@ -1,0 +1,24 @@
+<!--pages/signRecord/index.wxml-->
+<!--pages/history/index.wxml-->
+<view class="signRecord">
+	<floatmenu class='pubMenu' color='#333' title='签到纪录' bgcolor='#fff' />
+	<view class="signRecordT {{isIpx?'myIpx':''}}">
+		<p>签到记录（89）</p>
+    <ul>
+      <li wx:for='{{luckData}}'  wx:for-item='item' wx:key='index' wx:for-index='index'>
+        <span class="{{item.tys==0?'a':''||item.tys==1?'b':''||item.tys==2?'c':''||item.tys==3?'d':''}}">
+          <text>{{item.types}}</text>
+        </span>
+        <span>
+          <view class="title">{{item.title}}</view>
+          <view class="time">签到时间:<u class='bf'>{{item.time}}</u></view>
+          <view class="time" wx:if='{{item.timeInterval}}'>签到时段:<u class='bf'>{{item.timeInterval}}</u></view>
+        </span>
+      </li>
+    </ul>
+	</view>
+	<view class="backBtn">
+		<navigator>返回群中心</navigator>
+		<navigator url="../../pages/newSign/index">新增签到</navigator>
+	</view>
+</view>

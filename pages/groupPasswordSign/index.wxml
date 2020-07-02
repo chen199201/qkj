@@ -1,0 +1,55 @@
+<!--pages/prizeList/index.wxml-->
+<floatmenu class='pubMenu' color='#333' bgcolor='#fff' title='群内口令打卡' />
+<view class="prizeList">
+	<view class="explain {{isIpx?'myIpx':''}}">
+		*添加群积分奖品后，可自定义兑换奖品，群成员可消耗个人积分进行兑换
+	</view>
+	<view class="title">口令列表（89）</view>
+	<ul>
+		<li wx:for='{{przData}}' wx:for-item='item' wx:key='index' wx:for-index='index'>
+			<span>
+				<p>
+					<b>
+						<i>口令：</i>
+						<em>{{item.name}}</em>
+					</b>
+					<text wx:if='{{item.status!=0}}'>已完成</text>
+					<van-switch checked="{{item.check}}" active-color="#49A65C" data-index='{{index}}'  wx:else data-sw="0" size="44rpx" bind:change="onChange"  />
+				</p>
+				<p>
+					<b>
+						<i>打卡时间：</i>
+						<em>{{item.time}}</em>
+					</b>
+				</p>
+				<p>
+					<b>
+						<i>打卡时段：</i>
+						<em>{{item.sk}}</em>
+					</b>
+				</p>
+			</span>
+			<span class='gly'>
+				<p>
+					<b>群内推送打卡成功鼓励语</b>
+					<van-switch checked="{{item.swCheck}}" active-color="#49A65C" data-index='{{index}}' size="44rpx" data-sw="1" bind:change="onChange" wx:if='{{item.status==0}}' />
+				</p>
+				<p>
+					<b>
+						<i>累计打卡：</i>
+						<em>{{item.people}}人</em>
+					</b>
+				</p>
+			</span>
+			<span class='btnData'>
+				<u class='look' bindtap='look' data-index='1'>查看详情</u>
+				<u class='set' bindtap='look' wx:if='{{item.status==0}}' data-index='2'>编辑</u>
+				<u class='del' bindtap='del'>删除</u>
+			</span>
+		</li>
+	</ul>
+	<view class="backBtn">
+		<navigator>返回群中心</navigator>
+		<navigator url="../../pages/newPassword/index">新增口令</navigator>
+	</view>
+</view>

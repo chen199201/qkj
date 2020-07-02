@@ -1,0 +1,165 @@
+/* pages/newSign/index.wxss */
+/* pages/newPrize/index.wxss */
+.newPrize {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #F6F6F6;
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+
+.title {
+  height: 94rpx;
+  line-height: 94rpx;
+  font-size: 32rpx;
+  color: #333;
+  text-indent: 24rpx;
+  margin-top: 127rpx;
+}
+.myIpx{
+  margin-top: 179rpx;
+}
+.newPrizeList {
+  display: flex;
+  margin: 0 24rpx 0 24rpx;
+  background: white;
+  box-shadow: 0px 2rpx 4rpx 0px rgba(0, 0, 0, 0.06);
+  border-radius: 8rpx;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.newPrizeList li{
+  display: inline-flex;
+  width: 100%;
+  min-height: 90rpx;
+  align-items: center;
+  border-bottom: 2rpx dashed #F1F1F1 ;
+  margin: 0 24rpx 0 24rpx;
+  box-sizing: border-box;
+}
+.newPrizeList li:last-child{
+  border-bottom: none;
+}
+.newPrizeList li span{
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #666666;
+}
+
+
+.xztime{
+  display: inline-flex;
+  height: 100%;
+}
+.newPrizeList li span input{
+  text-align: right;
+}
+.newPrizeList .rich span{
+  flex-wrap: wrap;
+  height: 100%;
+}
+.newPrizeList .rich i{
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin: 28rpx 0 20rpx 0;
+}
+
+.newPrizeList .rich i u:last-child{
+  color: #FFBF46;
+}
+.newPrizeList .rich textarea{
+  width: 100%;
+  height: 40rpx;
+  color: #333;
+  padding-bottom: 24rpx;
+  line-height: 40rpx;
+}
+.updata{
+  display: inline-flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+}
+.addImg{
+  display: inline-flex;
+  align-items: center;
+}
+.imgList{
+  position: relative;
+  display: inline-flex;
+  margin-right: 20rpx;
+}
+.imgList image{
+  width: 63rpx;
+  height: 63rpx;
+}
+.imgList .delete{
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  right: -15rpx;
+  top: -15rpx;
+}
+.newPrizeList li .addImg image{
+  width: 63rpx;
+  height: 63rpx;
+} 
+.imgSet span{
+  height: 110rpx;
+  align-items: center;
+}
+.prizeType u{
+  font-size: 20rpx;
+  color: #999999;
+  margin-left: 12rpx;
+}
+.prizeType i {
+  display: inline-flex;
+  height: 50rpx;
+  align-items: center;
+}
+.prizeType .choice dd{
+  display: inline-flex;
+  width: 88rpx;
+  height: initial;
+  align-items: center;
+  justify-content: center;
+  border: 2rpx solid #999999;
+  color: #999999;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+.prizeType .choice dd:first-child{
+  border-right:none ;
+}
+.prizeType .choice dd:last-child{
+  border-left: none;
+}
+.backBtn{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 40rpx;
+  left: 0;
+  width: 100%;
+}
+.backBtn .bottons{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin: 0 24rpx 0 24rpx;
+  background: linear-gradient(135deg,rgba(105,212,121,1) 0%,rgba(73,166,92,1) 100%);
+  border-radius:44rpx;
+  font-size: 32rpx;
+  color: white;
+  font-weight: normal;
+}
+.inColor{
+  color: #49A65C !important;
+  border: 2rpx solid #49A65C !important;
+}

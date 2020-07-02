@@ -1,0 +1,78 @@
+<!--pages/newSign/index.wxml-->
+<view class="newPrize">
+	<floatmenu class='pubMenu' color='#333' bgcolor='#fff' title='新建口令' />
+	<view class="title {{isIpx?'myIpx':''}}">编辑口令</view>
+	<ul class='newPrizeList'>
+		<li>
+			<span>
+				<i>口令</i>
+				<input type="text" placeholder="请输入口令" value="{{prizeData.name}}" />
+			</span>
+		</li>
+		<li>
+			<span>
+				<i>打卡日期</i>
+				<view class="xztime">
+					<block>
+						<view bindtap="openTimeFun" data-text="open" class="timeData">{{prizeData.signTime.openTime}}</view>
+						<van-popup show="{{openBox }}" data-text="open" position="bottom" bind:close="onClose">
+							<van-datetime-picker data-text="open" type="date" value="{{ currentDate }}" min-date="{{ minDate }}" formatter="{{ formatter }}" bind:confirm="onInput" />
+						</van-popup>
+					</block>
+					-<block>
+						<view bindtap="openTimeFun" class="timeData" data-text="end">{{prizeData.signTime.endTime}}</view>
+						<van-popup show="{{ endBox }}" position="bottom" data-text="end" bind:close="onClose">
+							<van-datetime-picker data-text="end" type="date" value="{{ currentDate }}" min-date="{{ minDate }}" formatter="{{ formatter }}" bind:confirm="onInput" />
+						</van-popup>
+					</block>
+				</view>
+			</span>
+		</li>
+		<li>
+			<span>
+				<i>打卡时段</i>
+        <view class="xztime">
+					<block>
+						<view bindtap="openTimeFun" data-text="timeOpen" class="timeData">{{prizeData.signTimeInterval.openTime}}</view>
+						<van-popup show="{{timeOpen }}" data-text="timeOpen" position="bottom" bind:close="onClose">
+							<van-datetime-picker data-text="timeOpen" type="time" value="{{ timeDate }}" min-hour="{{ minHour }}" max-hour="{{ maxHour }}" bind:confirm="onInput" />
+						</van-popup>
+					</block>
+					-<block>
+						<view bindtap="openTimeFun" class="timeData" data-text="timeEnd">{{prizeData.signTimeInterval.endTime}}</view>
+						<van-popup show="{{ timeOver }}" position="bottom" data-text="timeEnd" bind:close="onClose">
+							<van-datetime-picker data-text="timeEnd" type="time" value="{{ timeDate }}" min-hour="{{ minHour }}" max-hour="{{ maxHour }}" bind:confirm="onInput" />
+						</van-popup>
+					</block>
+				</view>
+			</span>
+		</li>
+		<li class='rich'>
+			<span>
+				<i>
+          <u>打卡开始鼓励语</u>
+          <u>查看示例</u>
+        </i>
+				<textarea placeholder="输入打卡开始鼓励语" value="{{prizeData.sintroduce}}" />
+				</span>
+		</li>
+    <li class='rich'>
+			<span>
+				<i>
+          <u>打卡结束鼓励语</u>
+          <u>查看示例</u>
+        </i>
+				<textarea placeholder="输入打卡结束鼓励语" value="{{prizeData.eintroduce}}" />
+				</span>
+		</li>
+		<li>
+			<span>
+				<i>打卡成功获得积分</i>
+				<input type="text" placeholder="请输入获得积分" value="{{prizeData.integral}}" />
+			</span>
+		</li>
+	</ul>
+  <view class="backBtn">
+    <button class="bottons" bindtap="submit">确认</button>
+  </view>
+</view>

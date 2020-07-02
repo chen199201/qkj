@@ -1,0 +1,39 @@
+<!--pages/signDetails/index.wxml-->
+<view class="signDetails">
+	<floatmenu class='pubMenu' color='#fff' bgcolor='' title='打卡详情'   bigtop="{{bigtop}}" />
+	<view class="header {{isIpx?'myIpx':''}}">
+		<view class="signTime">打卡口令：吧啦吧卡</view>
+		<view class="signTime">共10天，已坚持到第8天</view>
+		<view class="signRank">
+			<view class="ranka">
+				<block wx:for='{{bigRank}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+					<li class="{{index==0?'ranka1':''||index==1?'ranka2':''||index==2?'ranka3':''}}">
+						<span class='mask'>
+							<image src="{{item.logo}}" class='logo'></image>
+							<image src="{{index==0?'img/4.png':''||index==1?'img/3.png':''||index==2?'img/5.png':''}}" class='logomask'></image>
+						</span>
+						<span class='name'>{{item.name}}</span>
+						<span class='tag'>{{item.tag}}</span>
+					</li>
+				</block>
+			</view>
+		</view>
+	</view>
+	<view class="rankb">
+		<view class="sRankList">
+			<ul>
+				<li wx:for='{{smallRank}}' wx:for-item='item' wx:for-index='index' wx:key='index'>
+					<span>
+						<i>{{index+4}}</i>
+						<image src="{{item.logo}}"></image>
+						<text>{{item.name}}</text>
+					</span>
+					<span>
+						<u>累计打卡{{item.cumulative}}天</u>
+					</span>
+				</li>
+			</ul>
+		</view>
+	</view>
+		<tabbar routername='{{routerName}}'/>
+</view>
