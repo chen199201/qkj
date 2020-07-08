@@ -23,12 +23,12 @@
   background: white;
   box-shadow: 0px 2rpx 4rpx 0px rgba(0, 0, 0, 0.06);
   border-radius: 8rpx;
-  margin-top: 151rpx;
+  margin-top: 87px;
   font-size: 24rpx;
   color: #333;
 }
 .myIpx{
-  margin-top: 203rpx;
+  margin-top: 108px;
 }
 .dataTit {
   height: 94rpx;
@@ -103,15 +103,16 @@
   height: 34rpx;
 }
 .setBox .c li span:first-child i:last-child input{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+
+  width: 80rpx;
   height: 34rpx;
   position: absolute;
   border: 2rpx solid #49A65C;
   box-sizing: border-box;
-  min-height: 34rpx;
+  min-height:34rpx;
+  max-height:34rpx;
+  line-height: 34rpx;
+  border-radius: 4rpx;
 }
 .setBox .c {
   display: inline-flex;
@@ -147,7 +148,9 @@
   color: #666;
   margin-bottom: 10rpx;
 }
-
+.setBox .d span i{
+  font-weight: 500;
+}
 .setBox .d u {
   font-size: 22rpx;
   color: #999;
@@ -156,7 +159,10 @@
 .setBox .d:last-child {
   margin-bottom: 0;
 }
-
+.setd image{
+  width: 32rpx;
+  height: 32rpx;
+}
 .boxa {
   padding-bottom: 40rpx;
   border-bottom: 2rpx solid #F1F1F1;
@@ -201,34 +207,37 @@
   margin-bottom: 30rpx;
 }
 .levelSet .setc{
-  justify-content: space-between;
+  justify-content: flex-start;
+  position: relative;
 }
 .levelSet .setc i:nth-child(1),.levelSet .setd li i:nth-child(1){
-  width: 100rpx;
+  width: 48rpx;
+  margin-right: 116rpx;
 }
 .levelSet .setc i:nth-child(2),.levelSet .setd li i:nth-child(2){
   width: 200rpx;
 }
-
-.levelSet .setc i:nth-child(2),.levelSet .setd li i:nth-child(2)
-
-.levelSet .setc i:nth-child(3),.levelSet .setd li i:nth-child(3){
+.levelSet .setd li i:nth-child(3){
   width: 100rpx;
   position: relative;
 }
-.levelSet .setd li i:nth-child(3) input{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+.levelSet .setd li i:nth-child(2) input,.levelSet .setd li i:nth-child(3) input{
+  width: 80rpx;
   height: 34rpx;
   position: absolute;
   border: 2rpx solid #49A65C;
   box-sizing: border-box;
-  min-height: 34rpx;
+  min-height:34rpx;
+  max-height:34rpx;
+  line-height: 34rpx;
+  border-radius: 4rpx;
 }
-
+.levelSet .setc i:nth-child(4),.levelSet .setd li i:nth-child(4){
+  position: absolute;
+  right: 0;
+}
 .levelSet .setd{
+  position: relative;
   display: inline-flex;
   width: 100%;
   flex-wrap: wrap;
@@ -240,7 +249,7 @@
   display: inline-flex;
   width: 100%;
   height: 34rpx;
-  justify-content: space-between;
+  justify-content:flex-start;
   margin-bottom: 24rpx;
 }
 .backBtn{

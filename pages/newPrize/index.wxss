@@ -14,11 +14,8 @@
   font-size: 32rpx;
   color: #333;
   text-indent: 24rpx;
-  margin-top: 127rpx;
 }
-.myIpx{
-  margin-top: 179rpx;
-}
+
 .newPrizeList {
   display: flex;
   margin: 0 24rpx 0 24rpx;
@@ -46,9 +43,11 @@
   justify-content: space-between;
   font-size: 28rpx;
   color: #666666;
+  align-items: center;
 }
 .newPrizeList li span input{
   text-align: right;
+  color: #333;
 }
 .newPrizeList .rich span{
   flex-wrap: wrap;
@@ -59,13 +58,15 @@
   line-height: 28rpx;
   margin: 28rpx 0 20rpx 0;
 }
-.newPrizeList .rich textarea{
+.newPrizeList .rich .texta{
   width: 100%;
   height: 40rpx;
   color: #333;
   padding-bottom: 24rpx;
   line-height: 40rpx;
+  text-align: left;
 }
+
 .updata{
   display: inline-flex;
   flex: 1;
@@ -100,15 +101,25 @@
   height: 110rpx;
   align-items: center;
 }
+
 .prizeType u{
   font-size: 20rpx;
   color: #999999;
   margin-left: 12rpx;
 }
+.newPrizeList li b{
+  display: inline-flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #333;
+}
 .prizeType i {
   display: inline-flex;
   height: 50rpx;
   align-items: center;
+}
+.prizeType .choice {
+  border-radius: 8rpx;
 }
 .prizeType .choice dd{
   display: inline-flex;
@@ -123,9 +134,11 @@
 }
 .prizeType .choice dd:first-child{
   border-right:none ;
+  border-radius: 8rpx 0 0 8rpx;
 }
 .prizeType .choice dd:last-child{
   border-left: none;
+  border-radius: 0 8rpx 8rpx 0;
 }
 .backBtn{
   display: flex;

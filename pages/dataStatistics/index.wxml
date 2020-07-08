@@ -1,7 +1,7 @@
 <!--pages/dataStatistics/index.wxml-->
+<floatmenu class='pubMenu' color='#333' title='发货详情' bgcolor='#fff' />
 <view class="dataStat">
-	<floatmenu class='pubMenu' color='#333' title='数据统计' bgcolor='#fff' />
-	<view class="dataTit {{isIpx?'myIpx':''}}">奖品设置</view>
+	<view class="dataTit" style="margin-top:{{modeH+'px'}}">奖品设置</view>
 	<view class="dataList">
 		<ul>
 			<view class="dataType">
@@ -31,5 +31,5 @@
 			</view>
 		</ul>
 	</view>
-	<backbtn text='返回群中心'/>
+	<backbtn text='返回群中心' />
 </view>

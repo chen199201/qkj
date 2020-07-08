@@ -1,7 +1,7 @@
 <!--pages/groupPassword/index.wxml-->
 <floatmenu class='pubMenu' color='#333' bgcolor='#fff' title='系统指令' />
 <view class="groupPSD">
-	<view class="content {{isIpx?'myIpx':''}}">
+	<view class="content" style="margin-top:{{modeH+'px'}}">
 		<block>
 			<text>系统指令设置</text>
 			<i>群内直接发送指令，精准匹配，可呼出社群空间</i>

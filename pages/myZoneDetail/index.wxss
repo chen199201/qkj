@@ -6,16 +6,12 @@
 .myZone .header {
   position: relative;
   display: flex;
-  /* height: 158rpx; */
-  padding: 165rpx 24rpx 65rpx 24rpx;
+  padding: 0 24rpx 65rpx 24rpx;
   background: url('https://image.sqqmall.com/2020/06/29/299e7a4569fb350c.png') no-repeat;
   background-size: cover;
   box-shadow: 0px 2rpx 2rpx 0px rgba(0, 0, 0, 0.06);
   align-content: flex-start;
   flex-wrap: wrap;
-}
-.myIpx{
-  padding-top: 35rpx;
 }
 .myZone .header .title {
   position: relative;
@@ -69,6 +65,7 @@
 .groupInfo {
   display: flex;
   width: 100%;
+  margin-top: 16rpx;
 }
 
 .groupInfo p {
@@ -200,6 +197,7 @@
   margin-top: 40rpx;
   padding: 0 24rpx 0 24rpx;
   flex-wrap: wrap;
+  margin-bottom: 100rpx;
 }
 
 .nav .navTit {

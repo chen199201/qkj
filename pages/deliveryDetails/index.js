@@ -22,8 +22,9 @@ Page({
     openOver: false,
     currentDate: new Date().getTime() + 86400000,
     minDate: new Date().getTime(),
-    openTime: pubFun.formatDuring((new Date()).getTime() + 86400000), //开奖时间
+    openTime: pubFun.formatDuringDay((new Date()).getTime()), //开奖时间
     isIpx:pubFun.isIpx(),
+    modeH: '', //自定义头部高度
   },
 
   /**
@@ -47,7 +48,7 @@ Page({
   //确认开奖时间
   onInput(event) {
     console.log()
-    let openTime = pubFun.formatDuring(event.detail)
+    let openTime = pubFun.formatDuringDay(event.detail)
     this.setData({
       openTime: openTime,
       openOver: false
@@ -58,7 +59,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    const child = this.selectComponent('.pubMenu');
+    let timer = setInterval(() => {
+      if (child.data.myheight !== '') {
+        this.setData({
+          modeH: child.data.myheight
+        })
+        clearInterval(timer)
+      }
+    }, 10);
   },
 
   /**

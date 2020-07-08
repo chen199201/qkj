@@ -1,7 +1,7 @@
 <!--pages/newPrize/index.wxml-->
 <view class="newPrize">
 	<floatmenu class='pubMenu' color='#333' bgcolor='#fff' title='新建奖品' />
-	<view class="title {{isIpx?'myIpx':''}}">奖品列表</view>
+	<view class="title" style="margin-top:{{modeH+'px'}}">奖品列表</view>
 	<ul class='newPrizeList'>
 		<li>
 			<span>
@@ -12,53 +12,62 @@
 		<li class='rich'>
 			<span>
 				<i>奖品简介</i>
-				<textarea placeholder="输入奖品简介" value="{{prizeData.introduce}}" />
-				</span>
+				<input class="texta" type="text" placeholder="输入奖品简介" value="{{prizeData.introduce}}" />
+			</span>
 		</li>
 		<li class='imgSet'>
 			<span>
 				<i>奖品图片</i>
-        <block>
-          <view class="updata">
-            <view class="imgList" wx:for='{{prizeData.pics}}'  wx:key="index" wx:for-index="index" wx:for-item='item'>
-              <image src='{{item}}' data-index="{{index}}" bindtap='previewImg1' mode='aspectFill' />
-              <image class='delete' data-index="{{index}}" data-idx='{{index}}' src='img/2.png' mode="aspectFill" bindtap='deleteImg' />
-            </view>
-            <view class="addImg">
-              <image src="img/1.png"  bindtap='chooseImg' wx:if='{{prizeData.pics.length<3}}'></image>
-            </view>
-          </view>
-        </block>
+				<block>
+					<view class="updata">
+						<view class="imgList" wx:for='{{prizeData.pics}}' wx:key="index" wx:for-index="index" wx:for-item='item'>
+							<image src='{{item}}' data-index="{{index}}" bindtap='previewImg1' mode='aspectFill' />
+							<image class='delete' data-index="{{index}}" data-idx='{{index}}' src='img/2.png' mode="aspectFill" bindtap='deleteImg' />
+						</view>
+						<view class="addImg">
+							<image src="img/1.png" bindtap='chooseImg' wx:if='{{prizeData.pics.length<3}}'></image>
+						</view>
+					</view>
+				</block>
 			</span>
 		</li>
-    <li class='prizeType'>
+		<li class='prizeType'>
 			<span>
 				<i>奖品类型<u>实物奖品兑换人需填写收货地址</u> </i>
-        <i class='choice'>
-          <dd class="{{typeIndex==items.val?'inColor':''}}" wx:for='{{prizeData.types}}' wx:key="idx" wx:for-index="idx" wx:for-item='items' data-idx='{{idx}}' bindtap='getType'>{{items.names}}</dd>
-        </i>
+				<i class='choice'>
+					<dd class="{{typeIndex==items.val?'inColor':''}}" wx:for='{{prizeData.types}}' wx:key="idx" wx:for-index="idx" wx:for-item='items' data-idx='{{idx}}' bindtap='getType'>{{items.names}}</dd>
+				</i>
 			</span>
 		</li>
-    <li>
+		<li>
 			<span>
 				<i>奖品库存</i>
-				<input type="text" placeholder="请输入奖品库存" value="{{prizeData.stock}}"/>
+				<b>
+					<input type="number" placeholder="请输入奖品库存" value="{{prizeData.stock}}" />
+					<text>份</text>
+				</b>
 			</span>
 		</li>
-    <li>
+		<li>
 			<span>
 				<i>所需积分</i>
-				<input type="text" placeholder="请输入所需积分" value="{{prizeData.integral}}"/>
+				<b>
+					<input type="number" placeholder="请输入所需积分" value="{{prizeData.integral}}" />
+					<text>分</text>
+				</b>
 			</span>
 		</li>
-    <li>
+		<li>
 			<span>
 				<i>单人兑换上限</i>
-				<input type="text" placeholder="请输入单人兑换上限" value="{{prizeData.limit}}"/>
+				<b>
+					<input type="number" placeholder="请输入单人兑换上限" value="{{prizeData.limit}}" />
+					<text>次</text>
+				</b>
 			</span>
 		</li>
 	</ul>
-  <view class="backBtn">
-    <button class="bottons" bindtap="submit">确认</button>
-  </view>
+	<view class="backBtn">
+		<button class="bottons" bindtap="submit">确认</button>
+	</view>
 </view>

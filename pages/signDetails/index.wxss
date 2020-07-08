@@ -3,16 +3,12 @@
   position: relative;
   width: 100%;
   height: 406rpx;
-  background:#63CC73;
+  /* background:#63CC73; */
+  background: url('https://image.sqqmall.com/2020/07/06/57265a23f0bd305f.png') no-repeat;
+  background-size: 100% 100%;
   flex-wrap: wrap;
   align-content: flex-start;
-  padding-top: 170rpx;
 }
-
-.myIpx{
-  padding-top: 201rpx;
-}
-
 
 .signTime {
   font-size: 28rpx;
@@ -63,6 +59,7 @@
   box-sizing: border-box;
   padding: 30rpx 0 30rpx 0;
   align-content: space-between;
+  z-index: 1;
 }
 
 .ranka .ranka2 .mask {
@@ -170,7 +167,12 @@
 .ranka .ranka1 .name,
 .ranka .ranka2 .name,
 .ranka .ranka3 .name {
+  display: block;
   color: #333;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
 
 }
 
@@ -198,6 +200,7 @@
   display: inline-flex;
   width: 100%;
   flex-wrap: wrap;
+  margin-bottom: 100rpx;
 }
 
 .sRankList ul li {

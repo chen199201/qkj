@@ -1,13 +1,13 @@
 <!--components/floatmenu/index.wxml-->
-<view class="menus {{bigtop>10?'bigone':''}} {{isIPhoneX?'ipx':''}}" style="background:{{bgcolor}}">
-	<p class='title'>
-		<view class="leftTab" wx:if='{{leftshow}}'>
+<view class="menus {{bigtop>10?'bigone':''}}" style="background:{{bgcolor}}">
+	<p class='title' style="margin-top:{{vtop+1+'px'}}">
+		<view class="leftTab" wx:if='{{leftshow}}' style="height:{{vheight+'px'}}">
 			<span bindtap='backUp'>
-				<image src="img/1.png"></image>
+				<image  src="{{bigtop>10?'img/1.png':'img/1a.png'&&bgcolor=='#fff'?'img/1.png':'img/1a.png'}}"></image>
 				<i></i>
 			</span>
 			<span bindtap='menuShow'>
-				<image src="img/2.png"></image>
+			<image  src="{{bigtop>10?'img/2.png':'img/2a.png'&&bgcolor=='#fff'?'img/2.png':'img/2a.png'}}"></image>
 			</span>
 		</view>
 		<b style='color:{{color}};'>{{title}}</b>

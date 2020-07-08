@@ -1,7 +1,7 @@
 <!--pages/prizeInfo/index.wxml-->
 <floatmenu class='pubMenu' color='#333' bgcolor='#fff' title='奖品信息' />
 <view class="prizeList">
-	<view class="explain {{isIpx?'myIpx':''}}">
+	<view class="explain" style="margin-top:{{modeH+'px'}}">
 		*积分兑换为群主自行设置奖品，与火把小助手团队无任何关系。如有疑问可联系群主沟通解决。
 	</view>
 	<view class="title">

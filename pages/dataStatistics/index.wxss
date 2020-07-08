@@ -4,6 +4,7 @@
   width: 100%;
   height: 100%;
   background: #F6F6F6;
+  overflow: scroll;
 }
 
 .dataTit {
@@ -12,10 +13,9 @@
   font-size: 32rpx;
   color: #333;
   text-indent: 24rpx;
-  margin-top: 127rpx;
 }
-.myIpx{
-  margin-top: 179rpx;
+.dataList{
+  margin-bottom: 120rpx;
 }
 .dataList ul {
   display: flex;
@@ -48,9 +48,9 @@
 .dataList ul .dataLine {
   display: inline-flex;
   width: 100%;
-  height: 900rpx;
+  /* height: 900rpx; */
   flex-wrap: wrap;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .dataList ul .dataLine li {

@@ -6,34 +6,107 @@ Page({
    * 页面的初始数据
    */
   data: {
-    myOpenData:[
-      {logo:'../../img/test.png',title:'不要害怕把自己的弱项暴露给他人',time:'2016/03/31',isGroup:true},
-      {logo:'../../img/test.png',title:'我们为不懈的努力鼓掌，但按结果付酬',time:'2016/03/31'},
-      {logo:'../../img/test.png',title:'我们为不懈的努力鼓掌，但按结果付酬',time:'2016/03/31'},
-      {logo:'../../img/test.png',title:'1.1×1.1×1.1×……×1.1≈3',time:'2016/03/31',isGroup:true},
-      {logo:'../../img/test.png',title:'不要害怕把自己的弱项暴露给他人',time:'2016/03/31',isGroup:true},
-      {logo:'../../img/test.png',title:'我们为不懈的努力鼓掌，但按结果付酬',time:'2016/03/31'},
-      {logo:'../../img/test.png',title:'我们为不懈的努力鼓掌，但按结果付酬',time:'2016/03/31'},
-      {logo:'../../img/test.png',title:'1.1×1.1×1.1×……×1.1≈3',time:'2016/03/31',isGroup:true},
-      {logo:'../../img/test.png',title:'1.1×1.1×1.1×……×1.1≈3',time:'2016/03/31',isGroup:true},
-      {logo:'../../img/test.png',title:'1.1×1.1×1.1×……×1.1≈3',time:'2016/03/31',isGroup:true},
-      {logo:'../../img/test.png',title:'1.1×1.1×1.1×……×1.1≈3',time:'2016/03/31',isGroup:true},
+    menu: [{
+        name: '我开通的',
+        val: 0
+      },
+      {
+        name: '我参与的',
+        val: 1
+      }
     ],
-    routerName:'',
-    isIpx:pubFun.isIpx(),
-    bigtop:'',
-  },
+    menuIndex: 0,
+    myOpenData: [{
+        logo: '../../img/test.png',
+        title: '不要害怕把自己的弱项暴露给他人',
+        time: '2016/03/31',
+        isGroup: true
+      },
+      {
+        logo: '../../img/test.png',
+        title: '我们为不懈的努力鼓掌，但按结果付酬',
+        time: '2016/03/31'
+      },
+      {
+        logo: '../../img/test.png',
+        title: '我们为不懈的努力鼓掌，但按结果付酬',
+        time: '2016/03/31'
+      },
+      {
+        logo: '../../img/test.png',
+        title: '1.1×1.1×1.1×……×1.1≈3',
+        time: '2016/03/31',
+        isGroup: true
+      },
+      {
+        logo: '../../img/test.png',
+        title: '不要害怕把自己的弱项暴露给他人',
+        time: '2016/03/31',
+        isGroup: true
+      },
+      {
+        logo: '../../img/test.png',
+        title: '我们为不懈的努力鼓掌，但按结果付酬',
+        time: '2016/03/31'
+      },
+      {
+        logo: '../../img/test.png',
+        title: '我们为不懈的努力鼓掌，但按结果付酬',
+        time: '2016/03/31'
+      },
+      {
+        logo: '../../img/test.png',
+        title: '1.1×1.1×1.1×……×1.1≈3',
+        time: '2016/03/31',
+        isGroup: true
+      },
+      {
+        logo: '../../img/test.png',
+        title: '1.1×1.1×1.1×……×1.1≈3',
+        time: '2016/03/31',
+        isGroup: true
+      },
+      {
+        logo: '../../img/test.png',
+        title: '1.1×1.1×1.1×……×1.1≈3',
+        time: '2016/03/31',
+        isGroup: true
+      },
+      {
+        logo: '../../img/test.png',
+        title: '1.1×1.1×1.1×……×1.1≈3',
+        time: '2016/03/31',
+        isGroup: true
+      },
+    ],
+    routerName: '',
+    isIpx: pubFun.isIpx(),
+    bigtop: '',
 
-  jump(){
+    modeH:'', //自定义头部高度
+  },
+  //菜单切换
+  menuChange(e) {
+    let index = e.currentTarget.dataset.index;
+    let menuIndex = this.data.menuIndex;
+    menuIndex = index;
+    this.setData({
+      menuIndex: menuIndex
+    })
+  },
+  jump() {
     wx.navigateTo({
       url: '../myZoneDetail/index'
     })
   },
-  onPageScroll: function(e) {
+  getChildComponent: function () {
+
+  },
+  onPageScroll: function (e) {
     // 页面滚动时执行
     let num = e.scrollTop;
     this.setData({
-      bigtop:num
+      bigtop: num
     })
   },
   /**
@@ -41,16 +114,20 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      routerName:pubFun.getCurrentPageUrl()
+      routerName: pubFun.getCurrentPageUrl()
     })
-    console.log(this.data.routerName)
+    // console.log(this.data.routerName)
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    const child = this.selectComponent('.pubMenu');
+    this.setData({
+      modeH:child.data.myheight
+    })
   },
 
   /**

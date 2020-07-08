@@ -15,11 +15,8 @@
   display: flex;
   padding: 24rpx 24rpx 0 24rpx;
   flex-wrap: wrap;
-  margin-top: 127rpx;
 }
-.myIpx{
-  margin-top: 179rpx;
-}
+
 .content text {
   width: 100%;
   font-size: 32rpx;
@@ -67,6 +64,7 @@
   font-size: 28rpx;
   color: #333333;
   text-align: right;
+  font-weight: 500;
 }
 
 .backBtn{

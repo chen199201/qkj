@@ -7,6 +7,7 @@ Page({
    */
   data: {
     isIpx:pubFun.isIpx(),
+    modeH: '', //自定义头部高度
   },
 
   /**
@@ -20,7 +21,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    const child = this.selectComponent('.pubMenu');
+    let timer = setInterval(() => {
+      if (child.data.myheight !== '') {
+        this.setData({
+          modeH: child.data.myheight
+        })
+        clearInterval(timer)
+      }
+    }, 10);
   },
 
   /**

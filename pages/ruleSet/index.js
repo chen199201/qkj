@@ -6,98 +6,131 @@ Page({
    * 页面的初始数据
    */
   data: {
-    mode1:[
-      {operation:'群内发言',integral:'22',fatigue:'64'},
-      {operation:'群内呼叫',integral:'22',fatigue:'64'},
-      {operation:'@管理',integral:'22',fatigue:'64'},
+    mode1: [{
+        operation: '群内发言',
+        integral: '22',
+        fatigue: '64'
+      },
+      {
+        operation: '群内呼叫',
+        integral: '22',
+        fatigue: '64'
+      },
+      {
+        operation: '@管理',
+        integral: '22',
+        fatigue: '64'
+      },
     ],
-    punch:[
-      {name:'口令打卡',integral:'22',fatigue:'64'}
+    punch: [{
+      name: '口令打卡',
+      integral: '22',
+      fatigue: '64'
+    }],
+    sign: [{
+      name: '群内签到',
+      integral: '22',
+      fatigue: '64'
+    }],
+    mode2: [{
+        text: '群主群管可在群内@成员+积分+数额来手动为成员增加（减少）积分例如：@嘻嘻哈哈大宣传 积分20（@嘻嘻哈哈大宣传 积分-89），即给洗嘻嘻哈哈大宣传加（减）20积分'
+      },
+      {
+        text: '禁止同时为多人加减积分'
+      },
+      {
+        text: '禁止一分钟内为同一个成员增加或减少积分'
+      },
     ],
-    sign:[
-      {name:'群内签到',integral:'22',fatigue:'64'}
+    levelSet: [{
+        name: '濮凡g康',
+        need: '500'
+      },
+      {
+        name: '平莎辰',
+        need: '500'
+      },
+      {
+        name: '信馥',
+        need: '500'
+      },
+      {
+        name: '欧涛',
+        need: '500'
+      },
     ],
-    mode2:[
-      {text:'群主群管可在群内@成员+积分+数额来手动为成员增加（减少）积分例如：@嘻嘻哈哈大宣传 积分20（@嘻嘻哈哈大宣传 积分-89），即给洗嘻嘻哈哈大宣传加（减）20积分'},
-      {text:'禁止同时为多人加减积分'},
-      {text:'禁止一分钟内为同一个成员增加或减少积分'},
-    ],
-    levelSet:[
-      {name:'濮凡g康',need:'500'},
-      {name:'平莎辰',need:'500'},
-      {name:'信馥',need:'500'},
-      {name:'欧涛',need:'500'},
-    ],
-    openIntegral:false, //开启群积分
-    typea:false,  //方式1
-    typeText:'设置',
-    jfCheck:false,
-    pswCheck:false,
-    qdCheck:false,
+    openIntegral: false, //开启群积分
+    typea: false, //方式1
+    typeText: '设置',
+    jfCheck: false,
+    pswCheck: false,
+    qdCheck: false,
 
-    typeb:false,  //等级设置
-    levelText:'设置',
-    isIpx:pubFun.isIpx(),
-  },  
+    nameSet: false, //名称设置
+    typeb: false, //等级设置
+    levelText: '设置',
+    isIpx: pubFun.isIpx(),
+    modeH: '', //自定义头部高度
+  },
 
   //开启群积分
-  onChange(){
+  onChange() {
     let openIntegral = this.data.openIntegral;
     openIntegral = !openIntegral;
     this.setData({
-      openIntegral:openIntegral
+      openIntegral: openIntegral
     })
   },
   // 邀请人积分播报
-  jfChange(){
+  jfChange() {
     let jfCheck = this.data.jfCheck;
     jfCheck = !jfCheck;
     this.setData({
-      jfCheck:jfCheck
+      jfCheck: jfCheck
     })
   },
   // 口令打卡
-  pswChange(){
+  pswChange() {
     let pswCheck = this.data.pswCheck;
     pswCheck = !pswCheck;
     this.setData({
-      pswCheck:pswCheck
+      pswCheck: pswCheck
     })
   },
   // 群内签到播报
-  qdChange(){
+  qdChange() {
     let qdCheck = this.data.qdCheck;
     qdCheck = !qdCheck;
     this.setData({
-      qdCheck:qdCheck
+      qdCheck: qdCheck
     })
   },
   // 积分设置
-  seta(){
+  seta() {
     let typea = this.data.typea;
     typea = !typea;
-    if(typea){
+    if (typea) {
       this.setData({
-        typeText:'保存',
-        typea:typea
+        typeText: '保存',
+        typea: typea
       })
-    }else{
+    } else {
       let flag = true;
-      this.data.mode1.forEach(item=>{
-        if(item.integral==''){
+      this.data.mode1.forEach(item => {
+        if (item.integral == '') {
           flag = false
         }
       })
-      if(flag){
+      if (flag) {
         wx.showToast({
           title: '保存成功',
           icon: 'success',
         })
         this.setData({
-          typeText:'设置',
-          typea:typea
+          typeText: '设置',
+          typea: typea
         })
-      }else{
+      } else {
         wx.showToast({
           title: '请输入',
           icon: 'none',
@@ -106,31 +139,35 @@ Page({
     }
   },
   // 等级设置
-  setb(){
+  setb() {
     let typeb = this.data.typeb;
+    let nameSet = this.data.nameSet;
     typeb = !typeb;
-    if(typeb){
+    nameSet = !nameSet;
+    if (typeb) {
       this.setData({
-        levelText:'保存',
-        typeb:typeb
+        levelText: '保存',
+        typeb: typeb,
+        nameSet: nameSet
       })
-    }else{
+    } else {
       let flag = true;
-      this.data.levelSet.forEach(item=>{
-        if(item.need==''){
+      this.data.levelSet.forEach(item => {
+        if (item.need == '') {
           flag = false
         }
       })
-      if(flag){
+      if (flag) {
         wx.showToast({
           title: '保存成功',
           icon: 'success',
         })
         this.setData({
-          typeText:'设置',
-          typeb:typeb
+          levelText: '设置',
+          typeb: typeb,
+          nameSet: nameSet
         })
-      }else{
+      } else {
         wx.showToast({
           title: '请输入',
           icon: 'none',
@@ -139,38 +176,44 @@ Page({
     }
   },
   // 删除
-  del(e){
+  del(e) {
     let index = e.currentTarget.dataset.index;
     let levelSet = this.data.levelSet;
-    levelSet.splice(index,1);
+    levelSet.splice(index, 1);
     this.setData({
-      levelSet:levelSet
+      levelSet: levelSet
     })
 
   },
   //等级操作
-  djgetVal(e){
+  djgetVal(e) {
     let inval = e.detail.value;
     let index = e.currentTarget.dataset.index;
     let levelSet = this.data.levelSet;
-    levelSet[index].need = inval;
-    this.setData({
-      levelSet:levelSet
-    })
-  }, 
+    let text = e.currentTarget.dataset.text;
+    if (text == 'name') {
+      levelSet[index].name = inval;
+    } else if (text == 'jf') {
+      levelSet[index].need = inval;
+      this.setData({
+        levelSet: levelSet
+      })
+    }
+
+  },
 
   //积分操作
-  getVal(e){
+  getVal(e) {
     let inval = e.detail.value;
     let index = e.currentTarget.dataset.index;
     let mode1 = this.data.mode1;
     mode1[index].integral = inval;
     this.setData({
-      mode1:mode1
+      mode1: mode1
     })
-  },  
+  },
   //获取修改后的数字
-  setInput(e){
+  setInput(e) {
     let inval = e.currentTarget.dataset.inval;
     let index = e.currentTarget.dataset.index;
     let mode1 = this.data.mode1;
@@ -188,7 +231,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    const child = this.selectComponent('.pubMenu');
+    let timer = setInterval(() => {
+      if (child.data.myheight !== '') {
+        this.setData({
+          modeH: child.data.myheight
+        })
+        clearInterval(timer)
+      }
+    }, 10);
   },
 
   /**

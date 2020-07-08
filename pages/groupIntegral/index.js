@@ -7,20 +7,16 @@ Page({
    */
   data: {
     listData:[
-      {logo:'../../img/test.png',name:'Callie',identity:'群主',groupName:'Steve Bell',integralNum:'138',leader:true},
-      {logo:'../../img/test.png',name:'Violet R',identity:'群管',groupName:'Mable Klein',integralNum:'464'},
-      {logo:'../../img/test.png',name:'Mae Rho',identity:'群主',groupName:'Mable Keller',integralNum:'276'},
-      {logo:'../../img/test.png',name:'Mae Rho',identity:'群主',groupName:'Mable Keller',integralNum:'276'},
-      {logo:'../../img/test.png',name:'Mae Rho',identity:'群主',groupName:'Mable Keller',integralNum:'276'},
-      {logo:'../../img/test.png',name:'Mae Rho',identity:'群主',groupName:'Mable Keller',integralNum:'276'},
-      {logo:'../../img/test.png',name:'Mae Rho',identity:'群主',groupName:'Mable Keller',integralNum:'276'},
-      {logo:'../../img/test.png',name:'Mae Rho',identity:'群主',groupName:'Mable Keller',integralNum:'276'},
-      {logo:'../../img/test.png',name:'Mae Rho',identity:'群主',groupName:'Mable Keller',integralNum:'276'},
-      {logo:'../../img/test.png',name:'Mae Rho',identity:'群主',groupName:'Mable Keller',integralNum:'276'},
-      {logo:'../../img/test.png',name:'Mae Rho',identity:'群主',groupName:'Mable Keller',integralNum:'276'},
+      {logo:'../../img/test.png',name:'Callie',groupName:'Steve Bell',integralNum:'138',leader:true},
+      {logo:'../../img/test.png',name:'Violet R',groupName:'Mable Klein',integralNum:'464'},
+      {logo:'../../img/test.png',name:'Mae Rho',groupName:'Mable Keller',integralNum:'276'},
+      {logo:'../../img/test.png',name:'Mae Rho',groupName:'Mable Keller',integralNum:'276'},
+      {logo:'../../img/test.png',name:'Mae Rho',groupName:'Mable Keller',integralNum:'276'},
+      {logo:'../../img/test.png',name:'Mae Rho',groupName:'Mable Keller',integralNum:'276'},
+      {logo:'../../img/test.png',name:'Mae Rho',groupName:'Mable Keller',integralNum:'276'},
     ],
     jumpLink:[
-      {img:'img/2.png',text:'口令打卡',link:''},
+      {img:'img/2.png',text:'积分明细',link:'../../pages/groupPasswordSign/index'},
       {img:'img/3.png',text:'积分兑换',link:'../../pages/myPrizeList/index'},
       {img:'img/4.png',text:'任务规则',},
     ],
@@ -32,8 +28,16 @@ Page({
     ],
     jflay:false, //积分弹窗
     isIpx:pubFun.isIpx(),
+    bigtop:'',  //高度大于100时控制顶部title背景色
+    modeH: '', //自定义头部高度
   },
-
+  onPageScroll: function(e) {
+    // 页面滚动时执行
+    let num = e.scrollTop;
+    this.setData({
+      bigtop:num
+    })
+  },
   jfClose(){
     this.setData({
       jflay:false
@@ -64,7 +68,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    const child = this.selectComponent('.pubMenu');
+    let timer = setInterval(() => {
+      if (child.data.myheight !== '') {
+        this.setData({
+          modeH: child.data.myheight
+        })
+        clearInterval(timer)
+      }
+    }, 10);
   },
 
   /**

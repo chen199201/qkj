@@ -1,18 +1,21 @@
 <!--components/tabBar/index.wxml-->
-	<view class="tabBar">
+<view class="tabBar">
+	<!-- <ul style="margin-bottom: {{isIPhoneX ? '54rpx' : '0rpx'}};"> -->
+	<ul>
 		<li bindtap="goLink" data-link='../../pages/myZone/index'>
 			<image src="img/2.png" wx:if="{{routername=='pages/myZone/index'}}" />
-      <image src="img/1.png" wx:else />
+			<image src="img/1.png" wx:else />
 			<text class="{{routername=='pages/myZone/index'?'inRouter':''}}">空间</text>
 		</li>
-		<li bindtap="goLink"  data-link='../../pages/myZoneDetail/index'>
+		<li bindtap="goLink" data-link='../../pages/myZoneDetail/index'>
 			<image src="img/4.png" wx:if="{{routername=='pages/myZoneDetail/index'}}" />
-      <image src="img/1.png" wx:else />
+			<image src="img/3.png" wx:else />
 			<text class="{{routername=='pages/myZoneDetail/index'?'inRouter':''}}">空间详情</text>
 		</li>
 		<li bindtap="goLink" data-link='../../pages/signDetails/index'>
-			<image src="img/6.png" wx:if="{{routername=='pages/signDetails/index'}}"/>
-      <image src="img/5.png" wx:else />
+			<image src="img/6.png" wx:if="{{routername=='pages/signDetails/index'}}" />
+			<image src="img/5.png" wx:else />
 			<text class="{{routername=='pages/signDetails/index'?'inRouter':''}}">打卡详情</text>
 		</li>
-	</view>
+	</ul>
+</view>

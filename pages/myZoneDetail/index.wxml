@@ -2,7 +2,7 @@
 <floatmenu class='pubMenu' color='#fff' title='我的空间'  bigtop="{{bigtop}}"/>
 <view class="myZone">
 	<view class="header">
-		<view class="groupInfo {{isIpx?'myIpx':''}}">
+		<view class="groupInfo {{isIpx?'myIpx':''}}" style="padding-top:{{modeH+'px'}}">
 			<p class="">
 				<span>
 					<image></image>

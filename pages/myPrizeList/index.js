@@ -14,6 +14,7 @@ Page({
       {logo:'../../img/test.png',name:'易烊千玺的眼镜',check:'false',need:'89'},
     ],
     isIpx:pubFun.isIpx(),
+    modeH: '', //自定义头部高度
   },
 
   lookMyprize(){
@@ -33,7 +34,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    const child = this.selectComponent('.pubMenu');
+    let timer = setInterval(() => {
+      if (child.data.myheight !== '') {
+        this.setData({
+          modeH: child.data.myheight
+        })
+        clearInterval(timer)
+      }
+    }, 10);
   },
 
   /**

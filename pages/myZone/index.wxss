@@ -10,7 +10,7 @@
   box-shadow: 0px 2rpx 2rpx 0px rgba(0, 0, 0, 0.06);
   align-content: flex-start;
   flex-wrap: wrap;
-  padding-top: 149rpx;
+  padding-top: 19%;
 }
 .myIpx{
   padding-top: 201rpx !important;
@@ -92,11 +92,9 @@
 .nav .navInfo {
   display: flex;
   width: 100%;
-  /* max-height: 860rpx; */
-  /* overflow: scroll; */
   flex-wrap: wrap;
   padding: 24rpx;
-  margin-bottom: 100rpx;
+  margin-bottom: 120rpx;
 }
 
 .nav .navInfo li {

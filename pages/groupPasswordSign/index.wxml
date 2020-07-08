@@ -1,7 +1,7 @@
 <!--pages/prizeList/index.wxml-->
 <floatmenu class='pubMenu' color='#333' bgcolor='#fff' title='群内口令打卡' />
 <view class="prizeList">
-	<view class="explain {{isIpx?'myIpx':''}}">
+	<view class="explain"  style="margin-top:{{modeH+'px'}}">
 		*添加群积分奖品后，可自定义兑换奖品，群成员可消耗个人积分进行兑换
 	</view>
 	<view class="title">口令列表（89）</view>

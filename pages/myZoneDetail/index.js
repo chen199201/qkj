@@ -25,6 +25,8 @@ Page({
     show:false,
     bigtop:'',  //高度大于100时控制顶部title背景色
     isIpx:pubFun.isIpx(),
+
+    modeH: '', //自定义头部高度
   },
 
   /**
@@ -60,7 +62,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    const child = this.selectComponent('.pubMenu');
+    let timer = setInterval(() => {
+      if (child.data.myheight !== '') {
+        this.setData({
+          modeH: child.data.myheight
+        })
+        clearInterval(timer)
+      }
+    }, 1);
   },
 
   /**

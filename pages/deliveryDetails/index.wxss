@@ -11,11 +11,6 @@
   display: flex;
   padding: 0 24rpx 0 24rpx;
   flex-wrap: wrap;
-  margin-top: 127rpx;
-}
-
-.myIpx{
-  margin-top: 179rpx;
 }
 
 .groupT p {
@@ -39,16 +34,19 @@
 .groupT ul .titles {
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
   height: 80rpx;
   font-size: 24rpx;
   color: #999;
   border-bottom: 2rpx solid #EEEEEE;
 }
-
+.groupT ul .titles text:first-child{
+  width: 364rpx;
+  margin-right: 24rpx;
+}
 .groupT ul .titles text:last-child {
-  margin-right: 134rpx;
+  /* margin-right: 134rpx; */
 }
 
 .groupT ul li {
@@ -161,6 +159,8 @@
   padding: 24rpx 24rpx 0 24rpx;
   box-shadow: 0px 2rpx 4rpx 0px rgba(0, 0, 0, 0.06);
   border-radius: 8rpx;
+  margin-bottom: 120rpx;
+
 }
 
 .przSet ul .btnNum {
@@ -197,6 +197,7 @@
 }
 
 .przSet ul .przType {
+  position: relative;
   display: inline-flex;
   width: 100%;
   justify-content: flex-start;
@@ -206,17 +207,21 @@
   border-bottom: 2rpx solid #EEEEEE;
   margin-bottom: 24rpx;
 }
-
+.przSet ul .przType text:nth-child(1){
+  width: 200rpx;
+  margin-right: 22rpx;
+}
 .przSet ul .przType text:nth-child(2) {
-  margin: 0 168rpx 0 174rpx;
+  width: 200rpx;
+  margin-right: 20rpx;
 }
-
-.przSet ul .przList {
-  height: 380rpx;
-  overflow: scroll;
+.przSet ul .przType text:nth-child(3) {
+  width: 202rpx;
+  position: absolute;
+  right: 0;
 }
-
 .przSet ul li {
+  position: relative;
   display: inline-flex;
   width: 100%;
   height: 48rpx;
@@ -227,31 +232,39 @@
   margin-bottom: 30rpx;
 }
 
-.przSet ul li image {
+
+
+.przSet ul li span {
+  display: inline-flex;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  align-items: center;
+}
+
+.przSet ul li .peoName {
+  width: 200rpx;
+  margin-right: 22rpx;
+}
+.przSet ul li .peoName image {
   width: 48rpx;
   height: 48rpx;
   margin-right: 12rpx;
   border-radius: 50%;
 }
-
-.przSet ul li span {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-.przSet ul li .peoName {
+.przSet ul li .peoName text{
   width: 140rpx;
-  margin-right: 22rpx;
 }
-
 .przSet ul li .przName {
   width: 200rpx;
   margin-right: 20rpx;
 }
 
 .przSet ul li .przTime {
-  flex: 1;
+  /* width: 212rpx; */
+  justify-content: flex-start;
+  position: absolute;
+  right: 0;
 }
 
 .backBtn {

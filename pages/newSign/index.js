@@ -44,6 +44,7 @@ Page({
     timeOpen: false, //选择开始时段
     timeOver: false, //选择结束时段
     isIpx:pubFun.isIpx(),
+    modeH: '', //自定义头部高度
   },
 
   // 选择时间弹窗
@@ -155,7 +156,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    const child = this.selectComponent('.pubMenu');
+    let timer = setInterval(() => {
+      if (child.data.myheight !== '') {
+        this.setData({
+          modeH: child.data.myheight
+        })
+        clearInterval(timer)
+      }
+    }, 1);
   },
 
   /**

@@ -2,7 +2,7 @@
 <!--pages/history/index.wxml-->
 <view class="signRecord">
 	<floatmenu class='pubMenu' color='#333' title='签到纪录' bgcolor='#fff' />
-	<view class="signRecordT {{isIpx?'myIpx':''}}">
+	<view class="signRecordT" style="padding-top:{{modeH+'px'}}">
 		<p>签到记录（89）</p>
     <ul>
       <li wx:for='{{luckData}}'  wx:for-item='item' wx:key='index' wx:for-index='index'>
@@ -13,6 +13,11 @@
           <view class="title">{{item.title}}</view>
           <view class="time">签到时间:<u class='bf'>{{item.time}}</u></view>
           <view class="time" wx:if='{{item.timeInterval}}'>签到时段:<u class='bf'>{{item.timeInterval}}</u></view>
+          <view class="btn">
+            <i bindtap='goStatistics'>查看详情</i>
+            <i bindtap='goOpen'>编辑</i>
+            <i>删除</i>
+          </view>
         </span>
       </li>
     </ul>

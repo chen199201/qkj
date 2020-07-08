@@ -2,7 +2,7 @@
 <view class="ruleSet">
 	<floatmenu class='pubMenu' color='#333' bgcolor='#fff' title='规则设置' />
 	<view class="ruleBox">
-		<view class="jfSet {{isIpx?'myIpx':''}}">
+		<view class="jfSet" style="margin-top:{{modeH+12+'px'}}">
 			<i>当前群已开启群积分</i>
 			<van-switch checked="{{openIntegral}}" active-color="#49A65C" size="44rpx" bind:change="onChange" />
 		</view>
@@ -39,7 +39,7 @@
 				<p class='d'>
 					<span>
 						<i>邀人进群积分播报</i>
-						<van-switch checked="{{jfCheck}}" active-color="#49A65C" size="44rpx" bind:change="jfChange" />
+						<van-switch checked="{{jfCheck}}" active-color="#49A65C" size="32rpx" bind:change="jfChange" />
 					</span>
 					<u>例如：@嘻嘻哈哈大宣传 您成功邀请七七八八进群，获得积分89分，当前可用积分189分</u>
 				</p>
@@ -57,7 +57,7 @@
 				<p class='d'>
 					<span>
 						<i>口令打卡积分播报</i>
-						<van-switch checked="{{pswCheck}}" active-color="#49A65C" size="44rpx" bind:change="pswChange" />
+						<van-switch checked="{{pswCheck}}" active-color="#49A65C" size="32rpx" bind:change="pswChange" />
 					</span>
 					<u>例如：@嘻嘻哈哈大宣传 打卡成功，获得积分89分，当前可用积分189分</u>
 				</p>
@@ -75,7 +75,7 @@
 				<p class='d'>
 					<span>
 						<i>群内签到积分播报</i>
-						<van-switch checked="{{qdCheck}}" active-color="#49A65C" size="44rpx" bind:change="qdChange" />
+						<van-switch checked="{{qdCheck}}" active-color="#49A65C" size="32rpx" bind:change="qdChange" />
 					</span>
 					<u>例如：@嘻嘻哈哈大宣传 签到成功，获得积分89分，当前可用积分189分</u>
 				</p>
@@ -106,12 +106,15 @@
 			<p class='setd'>
 				<li wx:for='{{levelSet}}' wx:key='index' wx:for-index="index" wx:for-item='item'>
 					<i>{{index+1}}</i>
-					<i>{{item.name}}</i>
+					<i>
+						<b wx:if='{{!nameSet}}'>{{item.name}}</b>
+						<input wx:else type="text" bindinput='djgetVal' data-text='name' data-index='{{index}}' data-name='{{item.name}}' value='{{item.name}}'/>
+					</i>
 					<i>
 						<u wx:if='{{!typeb}}'>{{item.need}}</u>
-						<input wx:else type="text" bindinput='djgetVal' data-index='{{index}}' data-inVal='{{item.need}}' value='{{item.need}}'/>
+						<input wx:else type="text" bindinput='djgetVal' data-text='jf' data-index='{{index}}' data-inVal='{{item.need}}' value='{{item.need}}'/>
 					</i>
-					<i bindtap='del' data-index='{{index}}'>删除</i>
+					<i bindtap='del' data-index='{{index}}'><image src="img/1.png"></image></i>
 				</li>
 			</p>
 		</view>

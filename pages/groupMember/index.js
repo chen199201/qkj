@@ -11,12 +11,34 @@ Page({
       {logo:'../../img/test.png',name:'Greer',identity:1,groupName:'Mable','jionTime':'1982/09/11'},
       {logo:'../../img/test.png',name:'Georgie Sc',identity:1,groupName:'Miller','jionTime':'2004/02/07'},
       {logo:'../../img/test.png',name:'Bruce',identity:3,groupName:'Lettie Adki','jionTime':'1984/11/11'},
+      {logo:'../../img/test.png',name:'Bruce',identity:3,groupName:'Lettie Adki','jionTime':'1984/11/11'},
+      {logo:'../../img/test.png',name:'Bruce',identity:3,groupName:'Lettie Adki','jionTime':'1984/11/11'},
+      {logo:'../../img/test.png',name:'Bruce',identity:3,groupName:'Lettie Adki','jionTime':'1984/11/11'},
+      {logo:'../../img/test.png',name:'Bruce',identity:3,groupName:'Lettie Adki','jionTime':'1984/11/11'},
+      {logo:'../../img/test.png',name:'Bruce',identity:3,groupName:'Lettie Adki','jionTime':'1984/11/11'},
+      {logo:'../../img/test.png',name:'Bruce',identity:3,groupName:'Lettie Adki','jionTime':'1984/11/11'},
+      {logo:'../../img/test.png',name:'Bruce',identity:3,groupName:'Lettie Adki','jionTime':'1984/11/11'},
+      {logo:'../../img/test.png',name:'Bruce',identity:3,groupName:'Lettie Adki','jionTime':'1984/11/11'},
+      {logo:'../../img/test.png',name:'Bruce',identity:3,groupName:'Lettie Adki','jionTime':'1984/11/11'},
+      {logo:'../../img/test.png',name:'Bruce',identity:3,groupName:'Lettie Adki','jionTime':'1984/11/11'},
+      {logo:'../../img/test.png',name:'Bruce',identity:3,groupName:'Lettie Adki','jionTime':'1984/11/11'},
+      {logo:'../../img/test.png',name:'Bruce',identity:3,groupName:'Lettie Adki','jionTime':'1984/11/11'},
+      {logo:'../../img/test.png',name:'Bruce',identity:3,groupName:'Lettie Adki','jionTime':'1984/11/11'},
+      {logo:'../../img/test.png',name:'Bruce',identity:3,groupName:'Lettie Adki','jionTime':'1984/11/11'},
+      {logo:'../../img/test.png',name:'Bruce',identity:3,groupName:'Lettie Adki','jionTime':'1984/11/11'},
     ],
     isIpx:pubFun.isIpx(),
-
+    bigtop:'',  //高度大于100时控制顶部title背景色
+    modeH: '', //自定义头部高度
   },
 
-
+  onPageScroll: function(e) {
+    // 页面滚动时执行
+    let num = e.scrollTop;
+    this.setData({
+      bigtop:num
+    })
+  },
   //设为群管
   cancel(e){
     let memberData = this.data.memberData;
@@ -47,7 +69,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    const child = this.selectComponent('.pubMenu');
+    let timer = setInterval(() => {
+      if (child.data.myheight !== '') {
+        this.setData({
+          modeH: child.data.myheight
+        })
+        clearInterval(timer)
+      }
+    }, 10);
   },
 
   /**

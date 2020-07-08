@@ -1,7 +1,10 @@
 <!--pages/groupSign/index.wxml-->
 <view class="signPage">
-	<floatmenu class='pubMenu' color='#fff' title='群签到'  bigtop="{{bigtop}}"/>
-	<view class="header {{isIpx?'myIpx':''}}">
+	<floatmenu class='pubMenu' color='#fff' title='群签到' bigtop="{{bigtop}}" />
+	<view class="header" style="padding-top:{{modeH+'px'}}">
+		<view class="setBtn">
+			<navigator url="../../pages/newSign/index">签到设置</navigator>
+		</view>
 		<view class="sign">
 			<p>
 				<text>17</text>
@@ -71,44 +74,44 @@
 		</view>
 	</view>
 
-  <!-- 分享 -->
-	<van-overlay show="{{false}}" bindtap='jfClose'>
+	<!-- 分享 -->
+	<van-overlay show="{{shareBox}}" bindtap='jfClose'>
 		<view class="jfBox">
 			<view class="jfBoxInfo">
 				<image src="img/10.png" class="closeImg"></image>
-        <view class="bgBox">
-				  <image class="bgs" src="../../img/test.png"></image>
-          <view class="textBox">
-            <i>09</i>
-            <u>AUG 2020</u>
-          </view>
-          <view class="contentBox">
-            <text>再大的愿景都是从小处着手，越大的图越要从小处搞，越小的东西越要从大处着眼</text>
-            <text>—— 阿里土话</text>
-          </view>
-          <view class="place">
-            <text>我在「麓谷一年级」完成签到</text>
-            <text>今日签到：第1名</text>
-            <text>累计签到：10天</text>
-          </view>
-        </view>
-        <view class="infoBox">
-          <span>
-            <image src="../../img/test.png" class="pic"></image>
-            <i>
-              <u>Marian Butler</u>
-              <em>邀请您加入<b>火把小助手</b></em>
-            </i>
-          </span>
-          <span>
-            <image src="../../img/test.png" class="qrcode"></image>
-          </span>
-        </view>
+				<view class="bgBox">
+					<image class="bgs" src="../../img/test.png"></image>
+					<view class="textBox">
+						<i>09</i>
+						<u>AUG 2020</u>
+					</view>
+					<view class="contentBox">
+						<text>再大的愿景都是从小处着手，越大的图越要从小处搞，越小的东西越要从大处着眼</text>
+						<text>—— 阿里土话</text>
+					</view>
+					<view class="place">
+						<text>我在「麓谷一年级」完成签到</text>
+						<text>今日签到：第1名</text>
+						<text>累计签到：10天</text>
+					</view>
+				</view>
+				<view class="infoBox">
+					<span>
+						<image src="../../img/test.png" class="pic"></image>
+						<i>
+							<u>Marian Butler</u>
+							<em>邀请您加入<b>火把小助手</b></em>
+						</i>
+					</span>
+					<span>
+						<image src="../../img/test.png" class="qrcode"></image>
+					</span>
+				</view>
 			</view>
-      <view class="deposit">
-        <button>保存到手机</button>
-        <p>保存到手机后，你可到朋友圈分享该图片</p>
-      </view>
+			<view class="deposit">
+				<button>保存到手机</button>
+				<p>保存到手机后，你可到朋友圈分享该图片</p>
+			</view>
 		</view>
 	</van-overlay>
 </view>

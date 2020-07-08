@@ -1,8 +1,7 @@
 <!--pages/myZone/index.wxml-->
 <floatmenu class='pubMenu' color='#fff' title='奖品列表' leftshow='{{false}}'   bigtop="{{bigtop}}"/>
-
 <view class="myZone">
-	<view class="header {{isIpx?'myIpx':''}}">
+	<view class="header {{isIpx?'myIpx':''}}" style="padding-top:{{modeH+'px'}}">
 		<p class='search'>
 			<image src="../../img/search.png"></image>
 			<input type="text" placeholder="搜索" />
@@ -10,8 +9,9 @@
 	</view>
 	<view class="nav">
 		<view class="navList">
-			<text class="navIndex">我开通的</text>
-			<text>我参与的</text>
+			<block wx:for='{{menu}}' wx:for-item='item' wx:for-index='index' wx:for-key='index'>
+				<text class="{{item.val==menuIndex?'navIndex':''}}" data-index='{{index}}' bindtap="menuChange">{{item.name}}</text>
+			</block>
 		</view>
 		<view class="navInfo">
 			<li wx:for='{{myOpenData}}' wx:for-item='item' wx:for-index='index' wx:key='index' bindtap='jump'>

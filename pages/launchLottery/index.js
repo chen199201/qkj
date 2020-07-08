@@ -1,7 +1,6 @@
 // pages/launchLottery/index.js
 import pubFun from '../../utils/pubFun'
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -15,19 +14,21 @@ Page({
       "img": [],
       "num": '100',
       "sortNo": '',
-      "probability": '89%',
-      "checked": true
+      "probability": '89',
+      "limitChecked": true,
+      "limitNum":10
     }],
 
     //添加一个奖项
     addPrizeTypeArr: [{
-      "type": 0,
-      "name": "",
-      "img": [],
-      "num": '',
-      "sortNo": '',
-      "probability": '',
-      "checked": false
+      "type": 0,              //奖品类型
+      "name": "",             //奖品名字
+      "img": [],              //奖品图片
+      "num": '',              //奖品数量
+      "sortNo": '',           
+      "probability": '',        //中奖概率
+      "limitChecked": false,    //抽奖限制
+      "limitNum":''             //抽奖积分限制
     }],
     //奖品类型选择
     optionArr: [{
@@ -43,7 +44,16 @@ Page({
       val: 2,
       isShow: false
     }],
+    //抽奖类型
+    prizeTArr:[
+      {text:'单次',val:0},
+      {text:'循环',val:1}
+    ],
+    tindex:0, //抽奖类型选择
     smVal: '', //抽奖说明
+
+    consumeNum:false, //参与消耗积分
+
     // 开奖方式
     items: [{
         name: 0,
@@ -55,7 +65,6 @@ Page({
         checked: 'true'
       },
     ],
-
     // 奖品类型选择参数
     num: 0,
     // 图片上传
@@ -69,9 +78,7 @@ Page({
 
     openTime: pubFun.formatDuring((new Date()).getTime() + 86400000), //开奖时间
     overTime: pubFun.formatDuring((new Date()).getTime() + 86400000), //结束时间
-    kjTime: pubFun.formatDuring((new Date()).getTime() + 86400000), //开奖时间
-
-    openOver: false, //时间选择弹窗
+    kjTime: pubFun.formatDuringDay((new Date()).getTime()), //开奖时间
 
     openShow: false, //开始时间弹窗
     overShow: false, //结束时间
@@ -90,59 +97,10 @@ Page({
       },
     },
     isIpx: pubFun.isIpx(),
-
-  },
-  //获取抽奖说明内容
-  getTextArea(e) {
-    this.setData({
-      smVal: e.detail.value
-    })
-  },
-  // 上传图片
-  updata(e) {
-    let index = e.currentTarget.dataset.imgindex;
-    let defalutArr = this.data.defalutArr;
-    let that = this;
-    wx.chooseImage({
-      count: 1,
-      sizeType: ['compressed'],
-      sourceType: ['album', 'camera'],
-      success(res) {
-        // tempFilePath可以作为img标签的src属性显示图片
-        const tempFilePaths = res.tempFilePaths;
-        defalutArr[index].img = tempFilePaths;
-        console.log(tempFilePaths)
-        that.setData({
-          defalutArr: defalutArr
-        })
-      }
-    })
-  },
-  //图片预览
-  imgYu(e) {
-    let url = e.currentTarget.dataset.url;
-    if (typeof url == 'object') {
-      url = url[0];
-    }
-    let arr = [];
-    arr.push(url)
-    wx.previewImage({
-      current: url, // 当前显示图片的http链接
-      urls: arr // 需要预览的图片http链接列表
-    })
-  },
+    modeH: '', //自定义头部高度
 
 
-  //积分选择
-  jsChange(e) {
-    let setJfData = this.data.setJfData;
-    let isCheck = e.currentTarget.dataset.jfdata.isCheck;
-    let idx = e.currentTarget.dataset.idx;
-    let index = e.currentTarget.dataset.index
-    console.log(setJfData[idx].options[index])
-    if (!isCheck) {
 
-    }
   },
 
   // 选择时间弹窗
@@ -194,6 +152,7 @@ Page({
         })
         break;
       case 'kj':
+        time = pubFun.formatDuringDay(e.detail);
         kjTime = time;
         this.setData({
           kjTime: kjTime,
@@ -228,6 +187,44 @@ Page({
       openShow: false
     })
   },
+  tchange(e){
+    let index = e.currentTarget.dataset.index;
+    let tindex = this.data.tindex;
+    tindex = index;
+    this.setData({
+      tindex:tindex
+    })
+  },
+
+  // 中奖限制
+  onChange(e){
+    let defalutArr = this.data.defalutArr;
+    let index = e.currentTarget.dataset.index;
+    console.log(defalutArr[index],index)
+    defalutArr[index].limitChecked = !defalutArr[index].limitChecked;
+    this.setData({
+      defalutArr:defalutArr
+    })
+  },
+
+  //参与消耗积分
+  jionChange(){
+    let timeSetData = this.data.timeSetData;
+    timeSetData.consume.check = !timeSetData.consume.check
+    this.setData({
+      timeSetData:timeSetData
+    })
+  },
+
+  //兑奖有效期
+  matchChange(){
+    let timeSetData = this.data.timeSetData;
+    timeSetData.prizeTime.check = !timeSetData.prizeTime.check
+    this.setData({
+      timeSetData:timeSetData
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -273,6 +270,8 @@ Page({
       defalutArr[idx].name = val;
     } else if (nameval == 1) {
       defalutArr[idx].num = val;
+    } else if (nameval == 2) {
+      defalutArr[idx].probability = val;
     } else {
       defalutArr[idx].lotteryAwardCodeList = val;
       console.log(defalutArr[idx].lotteryAwardCodeList)
@@ -311,101 +310,7 @@ Page({
       })
     }
   },
-  // 弹出群聊设置提示
-  qlTips() {
-    this.setData({
-      qlset: true
-    })
-  },
-  // 
-  // 群聊设置单选
-  qLradioChange: function (e) {
-    let index = e.currentTarget.dataset.index;
-    if (this.data.qlNum != index) {
-      if (index == 1) {
-        this.data.qLitem[1].inShow = true;
-        let qLitem = this.data.qLitem;
-        this.setData({
-          qLitem: qLitem
-        })
-      } else {
-        this.data.qLitem[1].inShow = false;
-        let qLitem = this.data.qLitem;
-        this.setData({
-          qLitem: qLitem
-        })
-      }
-      this.setData({
-        qlNum: index,
-      })
-    }
-  },
-  //群聊设置群多选择
-  qlCheck(e) {
-    let index = e.currentTarget.dataset.indexs;
-    this.data.qLitem[1].checkedList[index].isShow = !this.data.qLitem[1].checkedList[index].isShow;
-    let qLitem = this.data.qLitem;
-    this.setData({
-      qLitem: qLitem
-    })
-  },
-  // 群聊设置公告弹出
-  qlTap() {
-    this.setData({
-      qlset: true
-    })
-  },
-  // 群聊设置公告关闭
-  closeMask(e) {
-    let alertIndex = e.currentTarget.dataset.alerttype;
-    if (alertIndex == 0) {
-      this.setData({
-        qlset: false
-      })
-    } else if (alertIndex == 1) {
-      this.setData({
-        jfset: false
-      })
-    }
-  },
-  // 群聊设置关闭
-  confirmBtn(e) {
-    console.log(this.data.qlMask)
-    this.setData({
-      qlMask: false
-    })
-  },
-  // 无联盟全选
-  allShow() {
-    if (!this.data.wlmQlNum) {
-      this.data.qlItemData.forEach((item, index) => {
-        item.isShow = true;
-      })
-      let qlItemData = this.data.qlItemData;
-      this.setData({
-        wlmQlNum: true,
-        qlItemData: qlItemData
-      })
-    } else {
-      this.data.qlItemData.forEach((item, index) => {
-        item.isShow = false;
-      })
-      let qlItemData = this.data.qlItemData;
-      this.setData({
-        wlmQlNum: false,
-        qlItemData: qlItemData
-      })
-    }
-  },
-  //无联盟多选
-  wlmCheck(e) {
-    let index = e.currentTarget.dataset.indexs;
-    this.data.qlItemData[index].isShow = !this.data.qlItemData[index].isShow;
-    let qlItemData = this.data.qlItemData;
-    this.setData({
-      qlItemData: qlItemData
-    })
-  },
+
   switchChange: function (e) {
     console.log('switch 发生 change 事件，携带值为', e.detail.value)
   },
@@ -485,12 +390,21 @@ Page({
    */
   onReady: function () {
     let newArr = this.data.defalutArr.concat(this.data.prizeTypeArr);
+    const child = this.selectComponent('.pubMenu');
     newArr.forEach((item, index) => {
       item.sortNo = index + 1;
     })
     this.setData({
       defalutArr: newArr
     })
+    let timer = setInterval(() => {
+      if (child.data.myheight !== '') {
+        this.setData({
+          modeH: child.data.myheight
+        })
+        clearInterval(timer)
+      }
+    }, 10);
   },
 
   /**

@@ -1,4 +1,5 @@
 // components/tabBar/index.js
+import pubFun from '../../utils/pubFun'
 Component({
   /**
    * 组件的属性列表
@@ -7,6 +8,7 @@ Component({
     routername:{
       type:String,
       value:'',
+
     }
   },
 
@@ -14,7 +16,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    isIPhoneX:pubFun.isIpx(),
   },
 
   /**
@@ -28,5 +30,8 @@ Component({
         url: link,
       })
     },
+  },
+  attached(){
+    console.log(this.data.isIPhoneX)
   }
 })

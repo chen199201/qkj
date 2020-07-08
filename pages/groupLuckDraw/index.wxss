@@ -16,11 +16,8 @@
   background: white;
   padding: 0 24rpx 0 23rpx;
   box-sizing: border-box;
-  margin-top: 127rpx;
 }
-.myIpx{
-  margin-top: 179rpx;
-}
+
 
 .headB span {
   display: inline-flex;

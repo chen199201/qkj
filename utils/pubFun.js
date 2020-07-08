@@ -68,17 +68,17 @@ const pubFun = {
     return urlWithArgs
   },
   //返回群中心
-  backHome(){
+  backHome() {
     wx.navigateTo({
       url: '../../pages/myZone/index',
     })
   },
   //是否为苹果X
-  isIpx(){
+  isIpx() {
     let a = wx.getSystemInfoSync();
-    if(a.model.substring(0,8)=='iPhone X'){
+    if (a.model.substring(0, 8) == 'iPhone X') {
       return true
-    }else{
+    } else {
       return false
     }
   },

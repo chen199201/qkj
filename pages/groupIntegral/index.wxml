@@ -1,7 +1,7 @@
 <!--pages/groupIntegral/index.wxml-->
-<view>
-	<floatmenu class='pubMenu' color='#fff' title='我的空间' />
-	<view class="header {{isIpx?'myIpx':''}}">
+<view class="groupIntegral">
+	<floatmenu class='pubMenu' color='#fff' title='我的空间' bigtop="{{bigtop}}" />
+	<view class="header" style="padding-top:{{modeH+5+'px'}}">
 		<view class="setBtn">
 			<navigator url="../../pages/ruleSet/index">规则设置</navigator>
 			<navigator url="../../pages/prizeList/index">奖品设置</navigator>
@@ -44,7 +44,7 @@
 						<text>排名</text>
 						<text>成员</text>
 					</view>
-					<view class="listText" style="flex:1">
+					<view class="listText listTextR" style="flex:1">
 						<text>群名片</text>
 						<text>当前积分</text>
 					</view>
@@ -58,13 +58,13 @@
 							</u>
 							<u>
 								<i>{{item.name}}</i>
-								<i wx:if='{{item.leader}}'>{{item.identity}}</i>
-								<i wx:else class='istube'>{{item.identity}}</i>
+								<i wx:if='{{item.leader}}'>群主</i>
+								<i wx:else class='istube'>群管</i>
 							</u>
 						</span>
 						<span class='name'>{{item.groupName}}</span>
-						<span class='number'>{{item.integralNum}}</span>
 						<span class='set'>
+							<span class='number'>{{item.integralNum}}</span>
 							<image src="img/5.png"></image>
 						</span>
 					</li>

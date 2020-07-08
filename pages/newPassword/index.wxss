@@ -15,11 +15,8 @@
   font-size: 32rpx;
   color: #333;
   text-indent: 24rpx;
-  margin-top: 127rpx;
 }
-.myIpx{
-  margin-top: 179rpx;
-}
+
 .newPrizeList {
   display: flex;
   margin: 0 24rpx 0 24rpx;
@@ -37,6 +34,7 @@
   border-bottom: 2rpx dashed #F1F1F1 ;
   margin: 0 24rpx 0 24rpx;
   box-sizing: border-box;
+
 }
 .newPrizeList li:last-child{
   border-bottom: none;
@@ -54,8 +52,14 @@
   display: inline-flex;
   height: 100%;
 }
+.xztime .timeData{
+  text-decoration: underline;
+  color: #333;
+}
 .newPrizeList li span input{
   text-align: right;
+  color: #333;
+
 }
 .newPrizeList .rich span{
   flex-wrap: wrap;
@@ -70,7 +74,17 @@
 }
 
 .newPrizeList .rich i u:last-child{
+  display: inline-flex;
+  align-items: center;
   color: #FFBF46;
+  text-decoration: underline;
+  font-size: 24rpx;
+
+}
+.newPrizeList .rich i u:last-child image{
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 8rpx;
 }
 .newPrizeList .rich textarea{
   width: 100%;
@@ -78,6 +92,14 @@
   color: #333;
   padding-bottom: 24rpx;
   line-height: 40rpx;
+}
+.newPrizeList .rich .texta{
+  width: 100%;
+  height: 40rpx;
+  color: #333;
+  padding-bottom: 24rpx;
+  line-height: 40rpx;
+  text-align: left;
 }
 .updata{
   display: inline-flex;

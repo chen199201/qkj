@@ -1,7 +1,7 @@
 <!--pages/signDetails/index.wxml-->
 <view class="signDetails">
 	<floatmenu class='pubMenu' color='#fff' bgcolor='' title='打卡详情'   bigtop="{{bigtop}}" />
-	<view class="header {{isIpx?'myIpx':''}}">
+	<view class="header" style="padding-top:{{modeH+'px'}}">
 		<view class="signTime">打卡口令：吧啦吧卡</view>
 		<view class="signTime">共10天，已坚持到第8天</view>
 		<view class="signRank">
