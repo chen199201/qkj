@@ -1,0 +1,37 @@
+<!--pages/exchangeInfo/index.wxml-->
+<view class="exchangeInfo">
+	<floatmenu class='pubMenu' color='#333' bgcolor='#fff' title='兑换信息' />
+	<view class="dataTit" style="margin-top:{{modeH+'px'}}">奖品名称兑换详情</view>
+	<view class="infoList">
+		<ul>
+			<view class="dataType">
+				<view>
+					<text>成员</text>
+					<text>兑换时间</text>
+				</view>
+				<view>
+					<text>状态</text>
+					<text>收货地址</text>
+				</view>
+			</view>
+			<view class="dataLine">
+				<li wx:for='{{20}}'>
+					<view>
+						<image src="../../img/test.png"></image>
+						<text class="dataName">Edith Munoz</text>
+						<text class="dataTime">1972/07/23</text>
+						<span class='dataBtn'>
+							<i class='send'>确认发货</i>
+							<!-- <i class='over'>已过期</i> -->
+							<!-- <i class='complete'>已过期</i> -->
+						</span>
+					</view>
+					<view>
+						<text class="dataLook">查看地址</text>
+					</view>
+				</li>
+			</view>
+		</ul>
+	</view>
+	<backbtn text='返回群中心'/>
+</view>

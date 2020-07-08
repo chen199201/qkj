@@ -1,0 +1,479 @@
+/*# sourceMappingURL=turntable.wxss.map */
+div{
+  display: block;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+button {
+  background: none;
+  font-size: inherit;
+  color: inherit;
+  line-height: 1;
+  text-align: center;
+}
+
+.navigator-hover {
+  background: inherit;
+  color: inherit;
+  opacity: .7;
+}
+
+.btn-hover {
+  opacity: .7;
+}
+
+
+.turntable {
+  position: relative;
+  background: #fb364a url("https://image.sqqmall.com/2020/07/07/3430d7c30421b8fa.png") center bottom no-repeat;
+  background-size: 100% auto;
+  overflow: hidden;
+}
+.header{
+  position: relative;
+}
+
+.header::after {
+  display: inline-block;
+  content: "";
+  position: relative;
+  left: 50%;
+  margin-left: -135rpx;
+  width:270rpx;
+  height: 190rpx;
+  background: url("https://image.sqqmall.com/2020/07/07/a94529733a81641b.png") center top no-repeat;
+  background-size: 100% auto;
+  z-index: 1;
+}
+
+.header .my{
+  position: absolute;
+  width: 200rpx;
+  height: 88rpx;
+  left: 20rpx;
+  top:30rpx
+}
+.header .my image{
+  width: 100%;
+  height: 100%;
+}
+
+.header .ls{
+  display: inline-flex;
+  width: 150rpx;
+  flex-wrap: wrap;
+  position: absolute;
+  right: 20rpx;
+  top: 30rpx;
+}
+
+.header .ls navigator{
+  display: inline-flex;
+  width: 100%;
+  height: 40rpx;
+  font-size: 22rpx;
+  background: rgb(255, 186, 45);
+  border-radius: 40rpx;
+  justify-content: center;
+  align-items: center;
+  color: #ba271a;
+  margin-bottom: 20rpx;
+}
+
+
+.turntable .s1 {
+  position: relative;
+}
+
+.turntable .s1:after {
+  content: "";
+  position: absolute;
+  bottom: -30rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 440rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.turntable .s1 .main {
+  position: relative;
+  margin: 20rpx auto 60rpx auto;
+  width: 560rpx;
+  height: 560rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ffbf27;
+  z-index: 2;
+}
+
+.turntable .s1 .item-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f2c8ad;
+}
+
+.turntable .s1 .item-box:after {
+  content: "";
+  position: absolute;
+  top: -2%;
+  left: -2%;
+  width: 104%;
+  height: 104%;
+  background: url("https://image.sqqmall.com/2020/07/07/7b9d69211f6a66c0.png") center no-repeat;
+  background-size: 100% 100%;
+  z-index: 5;
+}
+
+.turntable .s1 .item {
+  display: inline-flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: -20%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  padding-top: 80rpx;
+  justify-content: center;
+  align-content: flex-end;
+  transform-origin: center bottom;
+  box-sizing: border-box;
+  /* clip-path: polygon(50% 100%, 8% 0, 92% 0); */
+  clip-path: polygon(-50% 0, 150% 0, 50% 100%)
+}
+
+.turntable .s1 .item:nth-child(odd) {
+  background: #fff;
+}
+
+.turntable .s1 .item .text {
+  margin: auto;
+  color: #ec4313;
+  font-size: 24rpx;
+  width: 100%;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.turntable .s1 .item .img {
+  margin: 10rpx auto 0 auto;
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 90rpx;
+}
+
+
+
+.turntable .s1 .item:nth-child(1) {
+  transform: rotate(0deg);
+}
+
+.turntable .s1 .item:nth-child(2) {
+  transform: rotate(90deg);
+}
+
+.turntable .s1 .item:nth-child(3) {
+  transform: rotate(180deg);
+}
+
+.turntable .s1 .item:nth-child(4) {
+  transform: rotate(270deg);
+}
+
+/* .turntable .s1 .item:nth-child(5) {
+  transform: rotate(225deg);
+}
+
+.turntable .s1 .item:nth-child(6) {
+  transform: rotate(270deg);
+}
+
+.turntable .s1 .item:nth-child(7) {
+  transform: rotate(315deg);
+}
+
+.turntable .s1 .item:nth-child(8) {
+  transform: rotate(360deg);
+} */
+
+.turntable .s1 .btn-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160rpx;
+  height: 160rpx;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9;
+}
+
+.turntable .s1 .btn-box .btn {
+  position: relative;
+  width: 160rpx;
+  height: 160rpx;
+  background: url("https://image.sqqmall.com/2020/07/07/1015ad166e0e907e.png") center no-repeat;
+  background-size: 100% auto;
+  z-index: 2;
+}
+
+.turntable .s1 .btn-box:after {
+  content: "";
+  position: absolute;
+  top: -38rpx;
+  left: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  transform: translateX(-50%);
+  background: url("https://image.sqqmall.com/2020/07/07/b304667b0480fa66.png") center bottom no-repeat;
+  background-size: auto 100%;
+}
+
+.turntable .s2 {
+  position: relative;
+  margin-top: 20rpx;
+  text-align: center;
+  font-size: 24rpx;
+  z-index: 2;
+}
+
+.turntable .s2 .p1 {
+  color: #fff;
+}
+
+.turntable .s2 .btn {
+  margin-top: 40rpx;
+  width: 200rpx;
+  height: 54rpx;
+  line-height: 54rpx;
+  border-radius: 54rpx;
+  background: #ffdf3e;
+}
+
+.turntable .s3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.7);
+  animation: fade-in linear .3s both;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+.turntable .s3 .main {
+
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600rpx;
+  background: -webkit-linear-gradient(90deg, #ff9d3d, #f44b45);
+  border-radius: .04rem;
+}
+
+
+.turntable .s3 .main .alert-head {
+  position: absolute;
+  top: -100rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0;
+  width: 740rpx;
+  height: 130rpx;
+  background: url('https://image.sqqmall.com/2020/07/07/31fa2ccdbab905c5.png') center no-repeat;
+  background-size: 100% 100%;
+  overflow: visible;
+}
+.turntable .s3 .main .alert-head .close {
+  position: absolute;
+  top: -40rpx;
+  right: 60rpx;
+  width: 64rpx;
+  height: 64rpx;
+  background: url('https://image.sqqmall.com/2020/07/07/6539a598f22bfedb.png') center no-repeat;
+  background-size: 100% 100%;
+}
+
+.turntable .s3 .main .list {
+  box-sizing: border-box;
+  margin: 50rpx 0;
+  padding: 0 50rpx;
+  max-height: 700rpx;
+  color: #fff;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  font-size: 24rpx;
+}
+
+.turntable .s3 .main .list .item .icon {
+  display: block;
+  height: 200rpx;
+  width: 200rpx;
+  background: url('https://image.sqqmall.com/2020/07/07/fd41d3ecb71bcde9.png') center no-repeat;
+  background-size: 100% auto;
+}
+
+.turntable .s3 .main .list .py-2 {
+  padding-top: 10rpx !important;
+  padding-bottom: 10rpx !important;
+}
+
+
+.turntable .s3 .main .list .item .c1 {
+  color: #fde233;
+}
+
+
+
+.turntable .s3 .main .p1 {
+  color: #fff;
+}
+
+.turntable .s3 .main .p2 {
+  padding: 20rpx 0;
+  color: #fde233;
+}
+
+.turntable .s3 .main .btn {
+  margin: 20rpx 50rpx 50rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #f6cb50;
+  color: #ca00fc;
+  border-radius: 80rpx;
+  font-size: 32rpx;
+}
+.turntable .s4{
+  display: flex;
+  height: 90rpx;
+  justify-content: center;
+  align-items: center;
+  border: 10rpx solid #f1aa7e;
+  background: #f9f9db;
+  border-radius: 10rpx;
+  margin: 20rpx 90rpx 0 90rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+}
+
+.s44{
+  margin: 20rpx 160rpx 0 160rpx !important;
+}
+
+.s4 li{
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+  height: 60rpx;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24rpx 0 24rpx;
+  box-sizing: border-box;
+}
+.s4 li:first-child{
+  margin-top: 50rpx;
+}
+.s4 li:first-child ::after{
+  content: "";
+    position: absolute;
+    top: -80rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 330rpx;
+    height: 70rpx;
+    background: url(https://image.sqqmall.com/2020/07/07/3635c41936721eae.png) center no-repeat;
+    background-size: 100% auto;
+    z-index: 2;
+}
+.s4 li:nth-child(odd){
+  background: #f2eec8;
+}
+.s4 li span{
+  display: inline-flex;
+  height: 100%;
+  align-items: center;
+  color: #333;
+  font-size: 24rpx;
+}
+
+.s4 li span image{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right: 6rpx;
+}
+.s4 li span:last-child{
+  color: #ba271a;
+}
+.s45{
+  flex-wrap: wrap;
+  height: auto !important;
+  margin-top: 40rpx !important;
+  margin-bottom: 60rpx !important;
+}
+
+.s5{
+  display: flex;
+  height: 100%;
+  padding: 24rpx;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.s5 p{
+  display: inline-flex;
+  width: 100%;
+  height: 50rpx;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-size: 32rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #f1f1f1;
+  margin-bottom: 40rpx;
+}
+.s5 ul{
+  display: inline-flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.s5 ul li{
+  display: inline-flex;
+  width: 100%;
+  height: 50rpx;
+  justify-content: flex-start;
+  font-size: 28rpx;
+  margin-bottom: 40rpx;
+}
+.s5 ul li text{
+  color: #333;
+  margin-right: 40rpx;
+  line-height: 50rpx;
+}
+.s5 ul li input{
+  flex: 1;
+  height: 100%;
+}

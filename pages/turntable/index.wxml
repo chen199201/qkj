@@ -1,0 +1,102 @@
+	<floatmenu class='pubMenu' color='#333' title='抽奖' bgcolor='#fff' bigtop="{{bigtop}}" />
+	<view class="turntable">
+		<view class="header" style="margin-top:{{modeH+20+'px'}}">
+			<a url="../../pages/myPrizeList/index" class="my" bindtap='openPopup'>
+				<image src="img/1.png"></image>
+			</a>
+			<view class="ls">
+				<navigator url="../../pages/lotteryHistory/index">历史记录</navigator>
+				<navigator url="../../pages/launchLottery/index">新增</navigator>
+			</view>
+		</view>
+		<view class="s2">
+			<view class="p1">现有积分:620 <text style="margin-left:20rpx">参与抽奖消耗：60</text></view>
+		</view>
+		<view class="s1">
+			<view class="main">
+				<div class="item-box" style="transform: rotate({{deg}}deg);transition: transform {{duration}}s ease;">
+					<view class="item" wx:for="{{listData}}" wx:key="index">
+						<view class="text">{{item.name}}</view>
+						<image mode="aspectFit" src="{{item.img}}" class="img"></image>
+					</view>
+				</div>
+				<view class="btn-box">
+					<button hover-class="btn-hover" class="btn" bindtap="start"></button>
+				</view>
+			</view>
+		</view>
+		<view class="s4 s44">
+			<text>剩余抽奖次数:</text>
+			<text>5</text>
+		</view>
+		<view class="s4">
+			<text>活动时间:</text>
+			<text>23小时58分</text>
+		</view>
+		<view class="s4 s45">
+			<li wx:for='{{4}}'>
+				<span>
+					<image src="../../img/test.png"></image>
+					<text>混蛋</text>
+				</span>
+				<span>
+					抽中
+				</span>
+				<span>
+					iPhone 6s
+				</span>
+			</li>
+		</view>
+		<view class="s3" style="" wx:if="{{popupShow}}">
+			<div class="wrap">
+				<div class="main">
+					<div class="alert-head"><a href="javascript:void(0)" class="close" bindtap='closePopup'></a></div>
+					<div class="list" style="padding: 50rpx;">
+						<block wx:for='{{result}}' wx:for-item='item' wx:for-index='index'>
+							<div class="item py-2">
+								<div class="flex">
+									<div><i class="icon" style="width: 120rpx; height: 120rpx; position: relative; left: -20rpx;"></i></div>
+									<div class="flex-1 c1" style="line-height: 1.6;">
+										<div><b>{{item.name}}</b></div>
+										<div class="fs-12" style="color: #fff" bindtap='txInfo'>
+											领取方式：
+											<span>：<a href="javascript:void(0)" ><u>请填写相关联系信息</u></a></span>
+										</div>
+										<div style="color: #fff" class="fs-12">有效期： {{item.date}}</div>
+										<div style="color: #fff" class="fs-12">状态：
+											<span wx:if="{{item.status===1}}">已过期</span>
+											<span wx:if="{{item.status===2}}">已完成</span>
+											<span wx:if="{{item.status===3}}">待领取</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</block>
+					</div>
+				</div>
+				<div class="mask"></div>
+			</div>
+		</view>
+
+		<van-popup show="{{dzShow}}" closeable position="bottom" custom-style="height: 520rpx" bind:close="onClose">
+            <view class="s5">
+                <p>请填写地址</p>
+                <ul>
+                    <li>
+                        <text>姓名</text>
+                        <input type="number" placeholder="请输入收货人姓名"/>
+                    </li>
+                    <li>
+                        <text>电话</text>
+                        <input type="number" placeholder="请输入收货电话"/>
+                    </li>
+                    <li>
+                        <text>电话</text>
+                        <input type="number" placeholder="请输入收货地址"/>
+                    </li>
+                </ul>
+                <van-button type="info" style="width:100%" block bindtap="suc">完成</van-button>
+            </view>
+        </van-popup>
+
+	</view>
